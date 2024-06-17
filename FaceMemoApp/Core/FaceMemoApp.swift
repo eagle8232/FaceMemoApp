@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct FaceMemoAppApp: App {
+struct FaceMemoApp: App {
     let persistenceController = PersistenceController.shared
 
     var body: some Scene {

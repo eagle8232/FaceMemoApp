@@ -7,22 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A82DAEE02C2083F500E18665 /* FaceMemoAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82DAEDF2C2083F500E18665 /* FaceMemoAppApp.swift */; };
+		A82DAEE02C2083F500E18665 /* FaceMemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82DAEDF2C2083F500E18665 /* FaceMemoApp.swift */; };
 		A82DAEE22C2083F500E18665 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82DAEE12C2083F500E18665 /* ContentView.swift */; };
 		A82DAEE42C2083F600E18665 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A82DAEE32C2083F600E18665 /* Assets.xcassets */; };
 		A82DAEE72C2083F600E18665 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A82DAEE62C2083F600E18665 /* Preview Assets.xcassets */; };
 		A82DAEE92C2083F600E18665 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82DAEE82C2083F600E18665 /* Persistence.swift */; };
 		A82DAEEC2C2083F600E18665 /* FaceMemoApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A82DAEEA2C2083F600E18665 /* FaceMemoApp.xcdatamodeld */; };
+		A82DAEFD2C20881800E18665 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82DAEFC2C20881800E18665 /* HomeView.swift */; };
+		A82DAF012C20889F00E18665 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82DAF002C20889F00E18665 /* TabBarView.swift */; };
+		A82DAF032C2088A900E18665 /* Tabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82DAF022C2088A900E18665 /* Tabs.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A82DAEDC2C2083F500E18665 /* FaceMemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceMemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A82DAEDF2C2083F500E18665 /* FaceMemoAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceMemoAppApp.swift; sourceTree = "<group>"; };
+		A82DAEDF2C2083F500E18665 /* FaceMemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceMemoApp.swift; sourceTree = "<group>"; };
 		A82DAEE12C2083F500E18665 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A82DAEE32C2083F600E18665 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A82DAEE62C2083F600E18665 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A82DAEE82C2083F600E18665 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		A82DAEEB2C2083F600E18665 /* FaceMemoApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FaceMemoApp.xcdatamodel; sourceTree = "<group>"; };
+		A82DAEFC2C20881800E18665 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		A82DAF002C20889F00E18665 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		A82DAF022C2088A900E18665 /* Tabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabs.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,11 +61,9 @@
 		A82DAEDE2C2083F500E18665 /* FaceMemoApp */ = {
 			isa = PBXGroup;
 			children = (
-				A82DAEDF2C2083F500E18665 /* FaceMemoAppApp.swift */,
-				A82DAEE12C2083F500E18665 /* ContentView.swift */,
-				A82DAEE32C2083F600E18665 /* Assets.xcassets */,
-				A82DAEE82C2083F600E18665 /* Persistence.swift */,
-				A82DAEEA2C2083F600E18665 /* FaceMemoApp.xcdatamodeld */,
+				A82DAEF42C20866000E18665 /* UI */,
+				A82DAEF32C20865200E18665 /* Core */,
+				A82DAEF22C20864800E18665 /* Helpers */,
 				A82DAEE52C2083F600E18665 /* Preview Content */,
 			);
 			path = FaceMemoApp;
@@ -71,6 +75,99 @@
 				A82DAEE62C2083F600E18665 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A82DAEF22C20864800E18665 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				A82DAEE82C2083F600E18665 /* Persistence.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		A82DAEF32C20865200E18665 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				A82DAEE32C2083F600E18665 /* Assets.xcassets */,
+				A82DAEEA2C2083F600E18665 /* FaceMemoApp.xcdatamodeld */,
+				A82DAEDF2C2083F500E18665 /* FaceMemoApp.swift */,
+				A82DAEE12C2083F500E18665 /* ContentView.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		A82DAEF42C20866000E18665 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				A82DAEF62C20867700E18665 /* UI Helpers */,
+				A82DAEF52C20866D00E18665 /* Screens */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		A82DAEF52C20866D00E18665 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				A82DAEF72C20868200E18665 /* Home */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		A82DAEF62C20867700E18665 /* UI Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				A82DAEFF2C20889300E18665 /* TabBar */,
+			);
+			path = "UI Helpers";
+			sourceTree = "<group>";
+		};
+		A82DAEF72C20868200E18665 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				A82DAEFB2C20880E00E18665 /* Views */,
+				A82DAEFA2C20880C00E18665 /* Models */,
+				A82DAEF92C20880700E18665 /* ViewModels */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		A82DAEF92C20880700E18665 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A82DAEFA2C20880C00E18665 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A82DAEFB2C20880E00E18665 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A82DAEFE2C20881B00E18665 /* Components */,
+				A82DAEFC2C20881800E18665 /* HomeView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A82DAEFE2C20881B00E18665 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		A82DAEFF2C20889300E18665 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				A82DAF002C20889F00E18665 /* TabBarView.swift */,
+				A82DAF022C2088A900E18665 /* Tabs.swift */,
+			);
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,10 +240,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A82DAF032C2088A900E18665 /* Tabs.swift in Sources */,
 				A82DAEE92C2083F600E18665 /* Persistence.swift in Sources */,
 				A82DAEE22C2083F500E18665 /* ContentView.swift in Sources */,
 				A82DAEEC2C2083F600E18665 /* FaceMemoApp.xcdatamodeld in Sources */,
-				A82DAEE02C2083F500E18665 /* FaceMemoAppApp.swift in Sources */,
+				A82DAEFD2C20881800E18665 /* HomeView.swift in Sources */,
+				A82DAF012C20889F00E18665 /* TabBarView.swift in Sources */,
+				A82DAEE02C2083F500E18665 /* FaceMemoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
