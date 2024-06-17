@@ -7,6 +7,11 @@
 
 import SwiftUI
 
-enum Tabs: CaseIterable {
+enum Tabs: String, CaseIterable {
     case home
+    case settings
+    
+    var toString: String {
+        return self.rawValue
+    }
 }

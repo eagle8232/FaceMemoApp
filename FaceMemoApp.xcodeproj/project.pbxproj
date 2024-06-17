@@ -16,6 +16,8 @@
 		A82DAEFD2C20881800E18665 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82DAEFC2C20881800E18665 /* HomeView.swift */; };
 		A82DAF012C20889F00E18665 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82DAF002C20889F00E18665 /* TabBarView.swift */; };
 		A82DAF032C2088A900E18665 /* Tabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82DAF022C2088A900E18665 /* Tabs.swift */; };
+		A82DAF052C208AD100E18665 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82DAF042C208AD100E18665 /* Constants.swift */; };
+		A82DAF072C208EEB00E18665 /* CustomBlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82DAF062C208EEB00E18665 /* CustomBlurView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		A82DAEFC2C20881800E18665 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		A82DAF002C20889F00E18665 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		A82DAF022C2088A900E18665 /* Tabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabs.swift; sourceTree = "<group>"; };
+		A82DAF042C208AD100E18665 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A82DAF062C208EEB00E18665 /* CustomBlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBlurView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				A82DAEE82C2083F600E18665 /* Persistence.swift */,
+				A82DAF042C208AD100E18665 /* Constants.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -117,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				A82DAEFF2C20889300E18665 /* TabBar */,
+				A82DAF062C208EEB00E18665 /* CustomBlurView.swift */,
 			);
 			path = "UI Helpers";
 			sourceTree = "<group>";
@@ -246,7 +252,9 @@
 				A82DAEEC2C2083F600E18665 /* FaceMemoApp.xcdatamodeld in Sources */,
 				A82DAEFD2C20881800E18665 /* HomeView.swift in Sources */,
 				A82DAF012C20889F00E18665 /* TabBarView.swift in Sources */,
+				A82DAF072C208EEB00E18665 /* CustomBlurView.swift in Sources */,
 				A82DAEE02C2083F500E18665 /* FaceMemoApp.swift in Sources */,
+				A82DAF052C208AD100E18665 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
