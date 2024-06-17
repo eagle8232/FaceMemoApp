@@ -6,10 +6,30 @@
 //
 
 import SwiftUI
+import StreamVideoSwiftUI
+import StreamVideo
 
 struct HomeView: View {
+    @StateObject var filterService = FilterService()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            contentView
+            VStack {
+                effectsView
+                Spacer()
+            }
+            .padding(.bottom, 50)
+        }
+    }
+    
+    var contentView: some View {
+        DeepARSwiftUIView(effect: $filterService.selectedEffect)
+            .ignoresSafeArea()
+    }
+    
+    var effectsView: some View {
+        EffectsListView(filterService: filterService)
     }
 }
 
