@@ -30,7 +30,7 @@ struct TabBarView: View {
     
     func tabView(tab: Tabs) -> some View {
         ZStack {
-            Image(tab.toString)
+            Image(currentTab == tab ? "selected\(tab.toString.capitalized)" : tab.toString)
                 .resizable()
                 .foregroundStyle(.white)
                 .frame(width: Constants.iconSize, height: Constants.iconSize)
