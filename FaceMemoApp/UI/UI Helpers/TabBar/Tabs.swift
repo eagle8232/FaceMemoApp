@@ -9,6 +9,7 @@ import SwiftUI
 
 enum Tabs: String, CaseIterable {
     case home
+    case recently
     case settings
     
     var toString: String {
