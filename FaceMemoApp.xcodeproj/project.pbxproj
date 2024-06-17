@@ -18,6 +18,33 @@
 		A82DAF032C2088A900E18665 /* Tabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82DAF022C2088A900E18665 /* Tabs.swift */; };
 		A82DAF052C208AD100E18665 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82DAF042C208AD100E18665 /* Constants.swift */; };
 		A82DAF072C208EEB00E18665 /* CustomBlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82DAF062C208EEB00E18665 /* CustomBlurView.swift */; };
+		A8C2834F2C20BDB100506A5B /* StreamVideo in Frameworks */ = {isa = PBXBuildFile; productRef = A8C2834E2C20BDB100506A5B /* StreamVideo */; };
+		A8C283512C20BDB100506A5B /* StreamVideoSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = A8C283502C20BDB100506A5B /* StreamVideoSwiftUI */; };
+		A8C283542C20BEEA00506A5B /* DeepAR in Frameworks */ = {isa = PBXBuildFile; productRef = A8C283532C20BEEA00506A5B /* DeepAR */; };
+		A8C283572C20BF4300506A5B /* DeepARSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C283562C20BF4300506A5B /* DeepARSwiftUIView.swift */; };
+		A8C283592C20CCDC00506A5B /* FilterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C283582C20CCDC00506A5B /* FilterService.swift */; };
+		A8C2836B2C20CE7400506A5B /* ray-ban-wayfarer.deepar in Resources */ = {isa = PBXBuildFile; fileRef = A8C2835B2C20CE7300506A5B /* ray-ban-wayfarer.deepar */; };
+		A8C2836C2C20CE7400506A5B /* Pixel_Hearts.deepar in Resources */ = {isa = PBXBuildFile; fileRef = A8C2835C2C20CE7300506A5B /* Pixel_Hearts.deepar */; };
+		A8C2836D2C20CE7400506A5B /* flower_face.deepar in Resources */ = {isa = PBXBuildFile; fileRef = A8C2835D2C20CE7300506A5B /* flower_face.deepar */; };
+		A8C2836E2C20CE7400506A5B /* Vendetta_Mask.deepar in Resources */ = {isa = PBXBuildFile; fileRef = A8C2835E2C20CE7300506A5B /* Vendetta_Mask.deepar */; };
+		A8C2836F2C20CE7400506A5B /* viking_helmet.deepar in Resources */ = {isa = PBXBuildFile; fileRef = A8C2835F2C20CE7300506A5B /* viking_helmet.deepar */; };
+		A8C283702C20CE7400506A5B /* Ping_Pong.deepar in Resources */ = {isa = PBXBuildFile; fileRef = A8C283602C20CE7300506A5B /* Ping_Pong.deepar */; };
+		A8C283712C20CE7400506A5B /* MakeupLook.deepar in Resources */ = {isa = PBXBuildFile; fileRef = A8C283612C20CE7300506A5B /* MakeupLook.deepar */; };
+		A8C283722C20CE7400506A5B /* Neon_Devil_Horns.deepar in Resources */ = {isa = PBXBuildFile; fileRef = A8C283622C20CE7300506A5B /* Neon_Devil_Horns.deepar */; };
+		A8C283732C20CE7400506A5B /* Snail.deepar in Resources */ = {isa = PBXBuildFile; fileRef = A8C283632C20CE7300506A5B /* Snail.deepar */; };
+		A8C283742C20CE7400506A5B /* Hope.deepar in Resources */ = {isa = PBXBuildFile; fileRef = A8C283642C20CE7300506A5B /* Hope.deepar */; };
+		A8C283752C20CE7400506A5B /* Fire_Effect.deepar in Resources */ = {isa = PBXBuildFile; fileRef = A8C283652C20CE7300506A5B /* Fire_Effect.deepar */; };
+		A8C283762C20CE7400506A5B /* galaxy_background.deepar in Resources */ = {isa = PBXBuildFile; fileRef = A8C283662C20CE7300506A5B /* galaxy_background.deepar */; };
+		A8C283772C20CE7400506A5B /* Split_View_Look.deepar in Resources */ = {isa = PBXBuildFile; fileRef = A8C283672C20CE7400506A5B /* Split_View_Look.deepar */; };
+		A8C283782C20CE7400506A5B /* Stallone.deepar in Resources */ = {isa = PBXBuildFile; fileRef = A8C283682C20CE7400506A5B /* Stallone.deepar */; };
+		A8C283792C20CE7400506A5B /* Emotion_Meter.deepar in Resources */ = {isa = PBXBuildFile; fileRef = A8C283692C20CE7400506A5B /* Emotion_Meter.deepar */; };
+		A8C2837A2C20CE7400506A5B /* Emotions_Exaggerator.deepar in Resources */ = {isa = PBXBuildFile; fileRef = A8C2836A2C20CE7400506A5B /* Emotions_Exaggerator.deepar */; };
+		A8C2837D2C20CEA400506A5B /* DeepAREffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C2837C2C20CEA400506A5B /* DeepAREffect.swift */; };
+		A8C283802C20D42500506A5B /* CIImage + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C2837F2C20D42500506A5B /* CIImage + Extension.swift */; };
+		A8C283822C20D60500506A5B /* UserCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C283812C20D60500506A5B /* UserCredentials.swift */; };
+		A8C283862C20DA2900506A5B /* DeepARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C283852C20DA2900506A5B /* DeepARViewController.swift */; };
+		A8C283882C20E35F00506A5B /* EffectCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C283872C20E35F00506A5B /* EffectCellView.swift */; };
+		A8C2838B2C20E37C00506A5B /* EffectsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C2838A2C20E37C00506A5B /* EffectsListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +60,30 @@
 		A82DAF022C2088A900E18665 /* Tabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabs.swift; sourceTree = "<group>"; };
 		A82DAF042C208AD100E18665 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A82DAF062C208EEB00E18665 /* CustomBlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBlurView.swift; sourceTree = "<group>"; };
+		A8C283562C20BF4300506A5B /* DeepARSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepARSwiftUIView.swift; sourceTree = "<group>"; };
+		A8C283582C20CCDC00506A5B /* FilterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterService.swift; sourceTree = "<group>"; };
+		A8C2835B2C20CE7300506A5B /* ray-ban-wayfarer.deepar */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ray-ban-wayfarer.deepar"; sourceTree = "<group>"; };
+		A8C2835C2C20CE7300506A5B /* Pixel_Hearts.deepar */ = {isa = PBXFileReference; lastKnownFileType = file; path = Pixel_Hearts.deepar; sourceTree = "<group>"; };
+		A8C2835D2C20CE7300506A5B /* flower_face.deepar */ = {isa = PBXFileReference; lastKnownFileType = file; path = flower_face.deepar; sourceTree = "<group>"; };
+		A8C2835E2C20CE7300506A5B /* Vendetta_Mask.deepar */ = {isa = PBXFileReference; lastKnownFileType = file; path = Vendetta_Mask.deepar; sourceTree = "<group>"; };
+		A8C2835F2C20CE7300506A5B /* viking_helmet.deepar */ = {isa = PBXFileReference; lastKnownFileType = file; path = viking_helmet.deepar; sourceTree = "<group>"; };
+		A8C283602C20CE7300506A5B /* Ping_Pong.deepar */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ping_Pong.deepar; sourceTree = "<group>"; };
+		A8C283612C20CE7300506A5B /* MakeupLook.deepar */ = {isa = PBXFileReference; lastKnownFileType = file; path = MakeupLook.deepar; sourceTree = "<group>"; };
+		A8C283622C20CE7300506A5B /* Neon_Devil_Horns.deepar */ = {isa = PBXFileReference; lastKnownFileType = file; path = Neon_Devil_Horns.deepar; sourceTree = "<group>"; };
+		A8C283632C20CE7300506A5B /* Snail.deepar */ = {isa = PBXFileReference; lastKnownFileType = file; path = Snail.deepar; sourceTree = "<group>"; };
+		A8C283642C20CE7300506A5B /* Hope.deepar */ = {isa = PBXFileReference; lastKnownFileType = file; path = Hope.deepar; sourceTree = "<group>"; };
+		A8C283652C20CE7300506A5B /* Fire_Effect.deepar */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fire_Effect.deepar; sourceTree = "<group>"; };
+		A8C283662C20CE7300506A5B /* galaxy_background.deepar */ = {isa = PBXFileReference; lastKnownFileType = file; path = galaxy_background.deepar; sourceTree = "<group>"; };
+		A8C283672C20CE7400506A5B /* Split_View_Look.deepar */ = {isa = PBXFileReference; lastKnownFileType = file; path = Split_View_Look.deepar; sourceTree = "<group>"; };
+		A8C283682C20CE7400506A5B /* Stallone.deepar */ = {isa = PBXFileReference; lastKnownFileType = file; path = Stallone.deepar; sourceTree = "<group>"; };
+		A8C283692C20CE7400506A5B /* Emotion_Meter.deepar */ = {isa = PBXFileReference; lastKnownFileType = file; path = Emotion_Meter.deepar; sourceTree = "<group>"; };
+		A8C2836A2C20CE7400506A5B /* Emotions_Exaggerator.deepar */ = {isa = PBXFileReference; lastKnownFileType = file; path = Emotions_Exaggerator.deepar; sourceTree = "<group>"; };
+		A8C2837C2C20CEA400506A5B /* DeepAREffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepAREffect.swift; sourceTree = "<group>"; };
+		A8C2837F2C20D42500506A5B /* CIImage + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CIImage + Extension.swift"; sourceTree = "<group>"; };
+		A8C283812C20D60500506A5B /* UserCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCredentials.swift; sourceTree = "<group>"; };
+		A8C283852C20DA2900506A5B /* DeepARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepARViewController.swift; sourceTree = "<group>"; };
+		A8C283872C20E35F00506A5B /* EffectCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectCellView.swift; sourceTree = "<group>"; };
+		A8C2838A2C20E37C00506A5B /* EffectsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectsListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +91,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8C283512C20BDB100506A5B /* StreamVideoSwiftUI in Frameworks */,
+				A8C2834F2C20BDB100506A5B /* StreamVideo in Frameworks */,
+				A8C283542C20BEEA00506A5B /* DeepAR in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +138,7 @@
 		A82DAEF22C20864800E18665 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				A8C2835A2C20CE6300506A5B /* DeepAR Effects */,
 				A82DAEE82C2083F600E18665 /* Persistence.swift */,
 				A82DAF042C208AD100E18665 /* Constants.swift */,
 			);
@@ -104,6 +159,7 @@
 		A82DAEF42C20866000E18665 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				A8C283552C20BEFE00506A5B /* Components */,
 				A82DAEF62C20867700E18665 /* UI Helpers */,
 				A82DAEF52C20866D00E18665 /* Screens */,
 			);
@@ -121,8 +177,10 @@
 		A82DAEF62C20867700E18665 /* UI Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				A8C2837E2C20D41300506A5B /* Extensions */,
 				A82DAEFF2C20889300E18665 /* TabBar */,
 				A82DAF062C208EEB00E18665 /* CustomBlurView.swift */,
+				A8C283582C20CCDC00506A5B /* FilterService.swift */,
 			);
 			path = "UI Helpers";
 			sourceTree = "<group>";
@@ -147,6 +205,7 @@
 		A82DAEFA2C20880C00E18665 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A8C283812C20D60500506A5B /* UserCredentials.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -163,6 +222,7 @@
 		A82DAEFE2C20881B00E18665 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				A8C283892C20E36B00506A5B /* Effects List View */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -174,6 +234,80 @@
 				A82DAF022C2088A900E18665 /* Tabs.swift */,
 			);
 			path = TabBar;
+			sourceTree = "<group>";
+		};
+		A8C283552C20BEFE00506A5B /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				A8C283832C20DA0600506A5B /* UIKit -> SwiftUI */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		A8C2835A2C20CE6300506A5B /* DeepAR Effects */ = {
+			isa = PBXGroup;
+			children = (
+				A8C2837B2C20CE8E00506A5B /* Effects */,
+				A8C2837C2C20CEA400506A5B /* DeepAREffect.swift */,
+			);
+			path = "DeepAR Effects";
+			sourceTree = "<group>";
+		};
+		A8C2837B2C20CE8E00506A5B /* Effects */ = {
+			isa = PBXGroup;
+			children = (
+				A8C283692C20CE7400506A5B /* Emotion_Meter.deepar */,
+				A8C2836A2C20CE7400506A5B /* Emotions_Exaggerator.deepar */,
+				A8C283652C20CE7300506A5B /* Fire_Effect.deepar */,
+				A8C2835D2C20CE7300506A5B /* flower_face.deepar */,
+				A8C283662C20CE7300506A5B /* galaxy_background.deepar */,
+				A8C283642C20CE7300506A5B /* Hope.deepar */,
+				A8C283612C20CE7300506A5B /* MakeupLook.deepar */,
+				A8C283622C20CE7300506A5B /* Neon_Devil_Horns.deepar */,
+				A8C283602C20CE7300506A5B /* Ping_Pong.deepar */,
+				A8C2835C2C20CE7300506A5B /* Pixel_Hearts.deepar */,
+				A8C2835B2C20CE7300506A5B /* ray-ban-wayfarer.deepar */,
+				A8C283632C20CE7300506A5B /* Snail.deepar */,
+				A8C283672C20CE7400506A5B /* Split_View_Look.deepar */,
+				A8C283682C20CE7400506A5B /* Stallone.deepar */,
+				A8C2835E2C20CE7300506A5B /* Vendetta_Mask.deepar */,
+				A8C2835F2C20CE7300506A5B /* viking_helmet.deepar */,
+			);
+			path = Effects;
+			sourceTree = "<group>";
+		};
+		A8C2837E2C20D41300506A5B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A8C2837F2C20D42500506A5B /* CIImage + Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A8C283832C20DA0600506A5B /* UIKit -> SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				A8C283842C20DA1E00506A5B /* DeepAR */,
+			);
+			path = "UIKit -> SwiftUI";
+			sourceTree = "<group>";
+		};
+		A8C283842C20DA1E00506A5B /* DeepAR */ = {
+			isa = PBXGroup;
+			children = (
+				A8C283562C20BF4300506A5B /* DeepARSwiftUIView.swift */,
+				A8C283852C20DA2900506A5B /* DeepARViewController.swift */,
+			);
+			path = DeepAR;
+			sourceTree = "<group>";
+		};
+		A8C283892C20E36B00506A5B /* Effects List View */ = {
+			isa = PBXGroup;
+			children = (
+				A8C283872C20E35F00506A5B /* EffectCellView.swift */,
+				A8C2838A2C20E37C00506A5B /* EffectsListView.swift */,
+			);
+			path = "Effects List View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,6 +326,11 @@
 			dependencies = (
 			);
 			name = FaceMemoApp;
+			packageProductDependencies = (
+				A8C2834E2C20BDB100506A5B /* StreamVideo */,
+				A8C283502C20BDB100506A5B /* StreamVideoSwiftUI */,
+				A8C283532C20BEEA00506A5B /* DeepAR */,
+			);
 			productName = FaceMemoApp;
 			productReference = A82DAEDC2C2083F500E18665 /* FaceMemoApp.app */;
 			productType = "com.apple.product-type.application";
@@ -220,6 +359,10 @@
 				Base,
 			);
 			mainGroup = A82DAED32C2083F500E18665;
+			packageReferences = (
+				A8C2834D2C20BDB100506A5B /* XCRemoteSwiftPackageReference "stream-video-swift" */,
+				A8C283522C20BEEA00506A5B /* XCRemoteSwiftPackageReference "swift-deepar" */,
+			);
 			productRefGroup = A82DAEDD2C2083F500E18665 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -234,8 +377,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8C283782C20CE7400506A5B /* Stallone.deepar in Resources */,
+				A8C283702C20CE7400506A5B /* Ping_Pong.deepar in Resources */,
 				A82DAEE72C2083F600E18665 /* Preview Assets.xcassets in Resources */,
+				A8C283752C20CE7400506A5B /* Fire_Effect.deepar in Resources */,
+				A8C283722C20CE7400506A5B /* Neon_Devil_Horns.deepar in Resources */,
+				A8C283772C20CE7400506A5B /* Split_View_Look.deepar in Resources */,
+				A8C2836E2C20CE7400506A5B /* Vendetta_Mask.deepar in Resources */,
+				A8C2836F2C20CE7400506A5B /* viking_helmet.deepar in Resources */,
 				A82DAEE42C2083F600E18665 /* Assets.xcassets in Resources */,
+				A8C283742C20CE7400506A5B /* Hope.deepar in Resources */,
+				A8C2837A2C20CE7400506A5B /* Emotions_Exaggerator.deepar in Resources */,
+				A8C283762C20CE7400506A5B /* galaxy_background.deepar in Resources */,
+				A8C283792C20CE7400506A5B /* Emotion_Meter.deepar in Resources */,
+				A8C2836C2C20CE7400506A5B /* Pixel_Hearts.deepar in Resources */,
+				A8C283732C20CE7400506A5B /* Snail.deepar in Resources */,
+				A8C283712C20CE7400506A5B /* MakeupLook.deepar in Resources */,
+				A8C2836D2C20CE7400506A5B /* flower_face.deepar in Resources */,
+				A8C2836B2C20CE7400506A5B /* ray-ban-wayfarer.deepar in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,12 +405,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8C283882C20E35F00506A5B /* EffectCellView.swift in Sources */,
 				A82DAF032C2088A900E18665 /* Tabs.swift in Sources */,
 				A82DAEE92C2083F600E18665 /* Persistence.swift in Sources */,
 				A82DAEE22C2083F500E18665 /* ContentView.swift in Sources */,
+				A8C2838B2C20E37C00506A5B /* EffectsListView.swift in Sources */,
+				A8C283862C20DA2900506A5B /* DeepARViewController.swift in Sources */,
+				A8C2837D2C20CEA400506A5B /* DeepAREffect.swift in Sources */,
+				A8C283592C20CCDC00506A5B /* FilterService.swift in Sources */,
+				A8C283822C20D60500506A5B /* UserCredentials.swift in Sources */,
+				A8C283572C20BF4300506A5B /* DeepARSwiftUIView.swift in Sources */,
 				A82DAEEC2C2083F600E18665 /* FaceMemoApp.xcdatamodeld in Sources */,
 				A82DAEFD2C20881800E18665 /* HomeView.swift in Sources */,
 				A82DAF012C20889F00E18665 /* TabBarView.swift in Sources */,
+				A8C283802C20D42500506A5B /* CIImage + Extension.swift in Sources */,
 				A82DAF072C208EEB00E18665 /* CustomBlurView.swift in Sources */,
 				A82DAEE02C2083F500E18665 /* FaceMemoApp.swift in Sources */,
 				A82DAF052C208AD100E18665 /* Constants.swift in Sources */,
@@ -388,8 +555,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FaceMemoApp/Preview Content\"";
+				DEVELOPMENT_TEAM = 546KM6S3B9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need to have access to your camera to use filters.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We need to have access to your microphone to use filters properly.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -401,7 +571,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.arab.FaceMemoApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.khan.FaceMemoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -421,8 +591,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FaceMemoApp/Preview Content\"";
+				DEVELOPMENT_TEAM = 546KM6S3B9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need to have access to your camera to use filters.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We need to have access to your microphone to use filters properly.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -434,7 +607,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.arab.FaceMemoApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.khan.FaceMemoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -468,6 +641,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A8C2834D2C20BDB100506A5B /* XCRemoteSwiftPackageReference "stream-video-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/GetStream/stream-video-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.7;
+			};
+		};
+		A8C283522C20BEEA00506A5B /* XCRemoteSwiftPackageReference "swift-deepar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/DeepARSDK/swift-deepar";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.6.5;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A8C2834E2C20BDB100506A5B /* StreamVideo */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A8C2834D2C20BDB100506A5B /* XCRemoteSwiftPackageReference "stream-video-swift" */;
+			productName = StreamVideo;
+		};
+		A8C283502C20BDB100506A5B /* StreamVideoSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A8C2834D2C20BDB100506A5B /* XCRemoteSwiftPackageReference "stream-video-swift" */;
+			productName = StreamVideoSwiftUI;
+		};
+		A8C283532C20BEEA00506A5B /* DeepAR */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A8C283522C20BEEA00506A5B /* XCRemoteSwiftPackageReference "swift-deepar" */;
+			productName = DeepAR;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		A82DAEEA2C2083F600E18665 /* FaceMemoApp.xcdatamodeld */ = {

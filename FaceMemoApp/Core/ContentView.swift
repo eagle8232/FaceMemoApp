@@ -13,7 +13,14 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
-            
+            switch currentTab {
+            case .home:
+                HomeView()
+            case .recently:
+                ZStack {}
+            case .settings:
+                ZStack {}
+            }
             tabBarView
         }
     }
