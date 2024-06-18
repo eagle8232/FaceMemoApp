@@ -13,5 +13,5 @@ class Constants {
     static let deepARLicenseKey: String = "761b251cb33e636bc596a0e055f494e1d8a3bb9c101f6edecaeffc33b92a2a0159690565fbe66621"
     
     static let cornerRadius: CGFloat = 10
-    static let iconSize: CGFloat = 25
+    static let iconSize: CGFloat = 35
 }

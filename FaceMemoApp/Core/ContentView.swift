@@ -13,13 +13,17 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
-            switch currentTab {
-            case .home:
+            // Changed from switch method to TabView
+            /// - We use TabView method, to ensure all views are not updated again
+            TabView(selection: $currentTab) {
                 HomeView()
-            case .recently:
+                    .tag(Tabs.home)
+                
                 ZStack {}
-            case .settings:
+                    .tag(Tabs.recently)
+                
                 ZStack {}
+                    .tag(Tabs.settings)
             }
             tabBarView
         }
@@ -30,6 +34,7 @@ struct ContentView: View {
             Spacer()
             TabBarView(currentTab: $currentTab)
         }
+        .padding(.bottom, 16)
     }
     
 }
