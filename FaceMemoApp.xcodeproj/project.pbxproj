@@ -20,6 +20,8 @@
 		A82DAF072C208EEB00E18665 /* CustomBlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82DAF062C208EEB00E18665 /* CustomBlurView.swift */; };
 		A84E30922C217CC4002F6E0A /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84E30912C217CC4002F6E0A /* CameraView.swift */; };
 		A84E30942C21907E002F6E0A /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84E30932C21907E002F6E0A /* CameraManager.swift */; };
+		A8610C3D2C21F7CC0042CACC /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8610C3C2C21F7CC0042CACC /* CustomAlertView.swift */; };
+		A8610C3F2C21F9AA0042CACC /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8610C3E2C21F9AA0042CACC /* CustomButton.swift */; };
 		A8C2834F2C20BDB100506A5B /* StreamVideo in Frameworks */ = {isa = PBXBuildFile; productRef = A8C2834E2C20BDB100506A5B /* StreamVideo */; };
 		A8C283512C20BDB100506A5B /* StreamVideoSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = A8C283502C20BDB100506A5B /* StreamVideoSwiftUI */; };
 		A8C283542C20BEEA00506A5B /* DeepAR in Frameworks */ = {isa = PBXBuildFile; productRef = A8C283532C20BEEA00506A5B /* DeepAR */; };
@@ -42,7 +44,6 @@
 		A8C2837A2C20CE7400506A5B /* Emotions_Exaggerator.deepar in Resources */ = {isa = PBXBuildFile; fileRef = A8C2836A2C20CE7400506A5B /* Emotions_Exaggerator.deepar */; };
 		A8C2837D2C20CEA400506A5B /* DeepAREffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C2837C2C20CEA400506A5B /* DeepAREffect.swift */; };
 		A8C283802C20D42500506A5B /* CIImage + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C2837F2C20D42500506A5B /* CIImage + Extension.swift */; };
-		A8C283822C20D60500506A5B /* UserCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C283812C20D60500506A5B /* UserCredentials.swift */; };
 		A8C283862C20DA2900506A5B /* DeepARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C283852C20DA2900506A5B /* DeepARViewController.swift */; };
 		A8C283882C20E35F00506A5B /* EffectCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C283872C20E35F00506A5B /* EffectCellView.swift */; };
 		A8C2838B2C20E37C00506A5B /* EffectsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C2838A2C20E37C00506A5B /* EffectsListView.swift */; };
@@ -63,6 +64,8 @@
 		A82DAF062C208EEB00E18665 /* CustomBlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBlurView.swift; sourceTree = "<group>"; };
 		A84E30912C217CC4002F6E0A /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		A84E30932C21907E002F6E0A /* CameraManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
+		A8610C3C2C21F7CC0042CACC /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
+		A8610C3E2C21F9AA0042CACC /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		A8C283562C20BF4300506A5B /* DeepARSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepARSwiftUIView.swift; sourceTree = "<group>"; };
 		A8C2835B2C20CE7300506A5B /* ray-ban-wayfarer.deepar */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ray-ban-wayfarer.deepar"; sourceTree = "<group>"; };
 		A8C2835C2C20CE7300506A5B /* Pixel_Hearts.deepar */ = {isa = PBXFileReference; lastKnownFileType = file; path = Pixel_Hearts.deepar; sourceTree = "<group>"; };
@@ -82,7 +85,6 @@
 		A8C2836A2C20CE7400506A5B /* Emotions_Exaggerator.deepar */ = {isa = PBXFileReference; lastKnownFileType = file; path = Emotions_Exaggerator.deepar; sourceTree = "<group>"; };
 		A8C2837C2C20CEA400506A5B /* DeepAREffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepAREffect.swift; sourceTree = "<group>"; };
 		A8C2837F2C20D42500506A5B /* CIImage + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CIImage + Extension.swift"; sourceTree = "<group>"; };
-		A8C283812C20D60500506A5B /* UserCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCredentials.swift; sourceTree = "<group>"; };
 		A8C283852C20DA2900506A5B /* DeepARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepARViewController.swift; sourceTree = "<group>"; };
 		A8C283872C20E35F00506A5B /* EffectCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectCellView.swift; sourceTree = "<group>"; };
 		A8C2838A2C20E37C00506A5B /* EffectsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectsListView.swift; sourceTree = "<group>"; };
@@ -140,7 +142,6 @@
 		A82DAEF22C20864800E18665 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				A8C2835A2C20CE6300506A5B /* DeepAR Effects */,
 				A82DAEE82C2083F600E18665 /* Persistence.swift */,
 				A82DAF042C208AD100E18665 /* Constants.swift */,
 			);
@@ -161,8 +162,8 @@
 		A82DAEF42C20866000E18665 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				A8C283552C20BEFE00506A5B /* Components */,
 				A82DAEF62C20867700E18665 /* UI Helpers */,
+				A8C283552C20BEFE00506A5B /* Components */,
 				A82DAEF52C20866D00E18665 /* Screens */,
 			);
 			path = UI;
@@ -171,6 +172,7 @@
 		A82DAEF52C20866D00E18665 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				A8610C382C21F5980042CACC /* Recently */,
 				A82DAEF72C20868200E18665 /* Home */,
 			);
 			path = Screens;
@@ -179,10 +181,8 @@
 		A82DAEF62C20867700E18665 /* UI Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				A8610C372C21F5000042CACC /* Managers */,
 				A8C2837E2C20D41300506A5B /* Extensions */,
-				A82DAEFF2C20889300E18665 /* TabBar */,
-				A82DAF062C208EEB00E18665 /* CustomBlurView.swift */,
-				A84E30932C21907E002F6E0A /* CameraManager.swift */,
 			);
 			path = "UI Helpers";
 			sourceTree = "<group>";
@@ -207,7 +207,7 @@
 		A82DAEFA2C20880C00E18665 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A8C283812C20D60500506A5B /* UserCredentials.swift */,
+				A8C2835A2C20CE6300506A5B /* DeepAR Effects */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -217,6 +217,7 @@
 			children = (
 				A82DAEFE2C20881B00E18665 /* Components */,
 				A82DAEFC2C20881800E18665 /* HomeView.swift */,
+				A84E30912C217CC4002F6E0A /* CameraView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -225,7 +226,6 @@
 			isa = PBXGroup;
 			children = (
 				A8C283892C20E36B00506A5B /* Effects List View */,
-				A84E30912C217CC4002F6E0A /* CameraView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -239,10 +239,53 @@
 			path = TabBar;
 			sourceTree = "<group>";
 		};
+		A8610C372C21F5000042CACC /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				A84E30932C21907E002F6E0A /* CameraManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		A8610C382C21F5980042CACC /* Recently */ = {
+			isa = PBXGroup;
+			children = (
+				A8610C3B2C21F5AA0042CACC /* Views */,
+				A8610C3A2C21F5A60042CACC /* Models */,
+				A8610C392C21F59D0042CACC /* ViewModels */,
+			);
+			path = Recently;
+			sourceTree = "<group>";
+		};
+		A8610C392C21F59D0042CACC /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A8610C3A2C21F5A60042CACC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A8610C3B2C21F5AA0042CACC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		A8C283552C20BEFE00506A5B /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				A82DAEFF2C20889300E18665 /* TabBar */,
+				A82DAF062C208EEB00E18665 /* CustomBlurView.swift */,
 				A8C283832C20DA0600506A5B /* UIKit -> SwiftUI */,
+				A8610C3C2C21F7CC0042CACC /* CustomAlertView.swift */,
+				A8610C3E2C21F9AA0042CACC /* CustomButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -408,6 +451,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8610C3F2C21F9AA0042CACC /* CustomButton.swift in Sources */,
 				A8C283882C20E35F00506A5B /* EffectCellView.swift in Sources */,
 				A82DAF032C2088A900E18665 /* Tabs.swift in Sources */,
 				A82DAEE92C2083F600E18665 /* Persistence.swift in Sources */,
@@ -417,10 +461,10 @@
 				A8C283862C20DA2900506A5B /* DeepARViewController.swift in Sources */,
 				A8C2837D2C20CEA400506A5B /* DeepAREffect.swift in Sources */,
 				A84E30942C21907E002F6E0A /* CameraManager.swift in Sources */,
-				A8C283822C20D60500506A5B /* UserCredentials.swift in Sources */,
 				A8C283572C20BF4300506A5B /* DeepARSwiftUIView.swift in Sources */,
 				A82DAEEC2C2083F600E18665 /* FaceMemoApp.xcdatamodeld in Sources */,
 				A82DAEFD2C20881800E18665 /* HomeView.swift in Sources */,
+				A8610C3D2C21F7CC0042CACC /* CustomAlertView.swift in Sources */,
 				A82DAF012C20889F00E18665 /* TabBarView.swift in Sources */,
 				A8C283802C20D42500506A5B /* CIImage + Extension.swift in Sources */,
 				A82DAF072C208EEB00E18665 /* CustomBlurView.swift in Sources */,

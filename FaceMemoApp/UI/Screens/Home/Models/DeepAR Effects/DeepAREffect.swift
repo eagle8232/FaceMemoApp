@@ -5,7 +5,7 @@
 //  Created by Vusal Nuriyev 2 on 18.06.24.
 //
 
-import SwiftUI
+import Foundation
 
 enum DeepAREffect: String, CaseIterable {
     case EmotionMeter = "Emotion_Meter"
