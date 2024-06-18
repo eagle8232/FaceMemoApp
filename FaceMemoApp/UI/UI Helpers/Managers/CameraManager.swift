@@ -5,12 +5,17 @@
 //  Created by Vusal Nuriyev 2 on 18.06.24.
 //
 
-import SwiftUI
 import DeepAR
-import AVFoundation
+
+protocol CameraManagerDelegate {
+    func didTakePhoto(_ image: UIImage!)
+}
 
 class CameraManager: NSObject, ObservableObject, DeepARDelegate {
     var deepAR: DeepAR?
+    var completion: ((UIImage) -> Void)?
+    
+    var delegate: CameraManagerDelegate?
     
     func takePicture() {
         if let deepAR {
@@ -20,7 +25,7 @@ class CameraManager: NSObject, ObservableObject, DeepARDelegate {
     }
     
     func didTakeScreenshot(_ screenshot: UIImage!) {
-        UIImageWriteToSavedPhotosAlbum(screenshot, nil, nil, nil)
+        delegate?.didTakePhoto(screenshot)
     }
     
 }
