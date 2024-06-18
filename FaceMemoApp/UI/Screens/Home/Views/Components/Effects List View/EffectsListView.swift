@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct EffectsListView: View {
-    @ObservedObject var filterService: FilterService
+    @Binding var selectedEffect: DeepAREffect
+    
     let rows = [
         GridItem(.flexible(minimum: 20, maximum: 200))
     ]
@@ -18,9 +19,9 @@ struct EffectsListView: View {
             LazyHGrid(rows: rows) {
                 ForEach(DeepAREffect.allCases, id: \.self) { effect in
                     Button {
-                        filterService.selectedEffect = effect
+                        selectedEffect = effect
                     } label: {
-                        EffectCellView(deepAREffect: effect, isSelected: filterService.selectedEffect == effect)
+                        EffectCellView(deepAREffect: effect, isSelected: selectedEffect == effect)
                     }
                 }
             }

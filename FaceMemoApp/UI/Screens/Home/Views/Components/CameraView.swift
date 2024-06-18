@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CameraView: View {
     @StateObject var cameraManager = CameraManager()
-    @ObservedObject var filterService = FilterService()
+    @State var selectedEffect: DeepAREffect = DeepAREffect.allCases.first!
     
     var body: some View {
         ZStack {
@@ -20,17 +20,16 @@ struct CameraView: View {
                 captureButton
             }
             .padding(.bottom, 50)
-            
         }
     }
     
     var contentView: some View {
-        DeepARSwiftUIView(cameraManager: cameraManager, effect: $filterService.selectedEffect)
+        DeepARSwiftUIView(cameraManager: cameraManager, effect: $selectedEffect)
             .ignoresSafeArea()
     }
     
     var effectsView: some View {
-        EffectsListView(filterService: filterService)
+        EffectsListView(selectedEffect: $selectedEffect)
     }
     
     var captureButton: some View {

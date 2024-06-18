@@ -46,6 +46,7 @@ class DeepARViewController: UIViewController, DeepARDelegate {
             arView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
         
+        /// - We give a value to deepAR to capture photos with effects
         cameraManager.deepAR = deepAR
         
         cameraController = CameraController()

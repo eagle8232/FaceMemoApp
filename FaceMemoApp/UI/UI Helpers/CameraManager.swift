@@ -10,11 +10,7 @@ import DeepAR
 import AVFoundation
 
 class CameraManager: NSObject, ObservableObject, DeepARDelegate {
-    var effect: DeepAREffect?
     var deepAR: DeepAR?
-    
-    private let videoOutputQueue = DispatchQueue(label: "videoOutputQueue")
-    
     
     func takePicture() {
         if let deepAR {
