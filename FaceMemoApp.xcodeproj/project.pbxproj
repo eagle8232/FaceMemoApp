@@ -18,6 +18,8 @@
 		A82DAF032C2088A900E18665 /* Tabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82DAF022C2088A900E18665 /* Tabs.swift */; };
 		A82DAF052C208AD100E18665 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82DAF042C208AD100E18665 /* Constants.swift */; };
 		A82DAF072C208EEB00E18665 /* CustomBlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82DAF062C208EEB00E18665 /* CustomBlurView.swift */; };
+		A84E30922C217CC4002F6E0A /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84E30912C217CC4002F6E0A /* CameraView.swift */; };
+		A84E30942C21907E002F6E0A /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84E30932C21907E002F6E0A /* CameraManager.swift */; };
 		A8C2834F2C20BDB100506A5B /* StreamVideo in Frameworks */ = {isa = PBXBuildFile; productRef = A8C2834E2C20BDB100506A5B /* StreamVideo */; };
 		A8C283512C20BDB100506A5B /* StreamVideoSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = A8C283502C20BDB100506A5B /* StreamVideoSwiftUI */; };
 		A8C283542C20BEEA00506A5B /* DeepAR in Frameworks */ = {isa = PBXBuildFile; productRef = A8C283532C20BEEA00506A5B /* DeepAR */; };
@@ -60,6 +62,8 @@
 		A82DAF022C2088A900E18665 /* Tabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabs.swift; sourceTree = "<group>"; };
 		A82DAF042C208AD100E18665 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A82DAF062C208EEB00E18665 /* CustomBlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBlurView.swift; sourceTree = "<group>"; };
+		A84E30912C217CC4002F6E0A /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		A84E30932C21907E002F6E0A /* CameraManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
 		A8C283562C20BF4300506A5B /* DeepARSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepARSwiftUIView.swift; sourceTree = "<group>"; };
 		A8C283582C20CCDC00506A5B /* FilterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterService.swift; sourceTree = "<group>"; };
 		A8C2835B2C20CE7300506A5B /* ray-ban-wayfarer.deepar */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ray-ban-wayfarer.deepar"; sourceTree = "<group>"; };
@@ -181,6 +185,7 @@
 				A82DAEFF2C20889300E18665 /* TabBar */,
 				A82DAF062C208EEB00E18665 /* CustomBlurView.swift */,
 				A8C283582C20CCDC00506A5B /* FilterService.swift */,
+				A84E30932C21907E002F6E0A /* CameraManager.swift */,
 			);
 			path = "UI Helpers";
 			sourceTree = "<group>";
@@ -223,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				A8C283892C20E36B00506A5B /* Effects List View */,
+				A84E30912C217CC4002F6E0A /* CameraView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -408,10 +414,12 @@
 				A8C283882C20E35F00506A5B /* EffectCellView.swift in Sources */,
 				A82DAF032C2088A900E18665 /* Tabs.swift in Sources */,
 				A82DAEE92C2083F600E18665 /* Persistence.swift in Sources */,
+				A84E30922C217CC4002F6E0A /* CameraView.swift in Sources */,
 				A82DAEE22C2083F500E18665 /* ContentView.swift in Sources */,
 				A8C2838B2C20E37C00506A5B /* EffectsListView.swift in Sources */,
 				A8C283862C20DA2900506A5B /* DeepARViewController.swift in Sources */,
 				A8C2837D2C20CEA400506A5B /* DeepAREffect.swift in Sources */,
+				A84E30942C21907E002F6E0A /* CameraManager.swift in Sources */,
 				A8C283592C20CCDC00506A5B /* FilterService.swift in Sources */,
 				A8C283822C20D60500506A5B /* UserCredentials.swift in Sources */,
 				A8C283572C20BF4300506A5B /* DeepARSwiftUIView.swift in Sources */,
@@ -560,6 +568,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need to have access to your camera to use filters.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We need to have access to your microphone to use filters properly.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "We need access to your photo libraries to save captured photos.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -596,6 +605,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need to have access to your camera to use filters.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We need to have access to your microphone to use filters properly.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "We need access to your photo libraries to save captured photos.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
