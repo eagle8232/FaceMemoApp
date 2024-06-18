@@ -24,7 +24,6 @@
 		A8C283512C20BDB100506A5B /* StreamVideoSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = A8C283502C20BDB100506A5B /* StreamVideoSwiftUI */; };
 		A8C283542C20BEEA00506A5B /* DeepAR in Frameworks */ = {isa = PBXBuildFile; productRef = A8C283532C20BEEA00506A5B /* DeepAR */; };
 		A8C283572C20BF4300506A5B /* DeepARSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C283562C20BF4300506A5B /* DeepARSwiftUIView.swift */; };
-		A8C283592C20CCDC00506A5B /* FilterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C283582C20CCDC00506A5B /* FilterService.swift */; };
 		A8C2836B2C20CE7400506A5B /* ray-ban-wayfarer.deepar in Resources */ = {isa = PBXBuildFile; fileRef = A8C2835B2C20CE7300506A5B /* ray-ban-wayfarer.deepar */; };
 		A8C2836C2C20CE7400506A5B /* Pixel_Hearts.deepar in Resources */ = {isa = PBXBuildFile; fileRef = A8C2835C2C20CE7300506A5B /* Pixel_Hearts.deepar */; };
 		A8C2836D2C20CE7400506A5B /* flower_face.deepar in Resources */ = {isa = PBXBuildFile; fileRef = A8C2835D2C20CE7300506A5B /* flower_face.deepar */; };
@@ -65,7 +64,6 @@
 		A84E30912C217CC4002F6E0A /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		A84E30932C21907E002F6E0A /* CameraManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
 		A8C283562C20BF4300506A5B /* DeepARSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepARSwiftUIView.swift; sourceTree = "<group>"; };
-		A8C283582C20CCDC00506A5B /* FilterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterService.swift; sourceTree = "<group>"; };
 		A8C2835B2C20CE7300506A5B /* ray-ban-wayfarer.deepar */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ray-ban-wayfarer.deepar"; sourceTree = "<group>"; };
 		A8C2835C2C20CE7300506A5B /* Pixel_Hearts.deepar */ = {isa = PBXFileReference; lastKnownFileType = file; path = Pixel_Hearts.deepar; sourceTree = "<group>"; };
 		A8C2835D2C20CE7300506A5B /* flower_face.deepar */ = {isa = PBXFileReference; lastKnownFileType = file; path = flower_face.deepar; sourceTree = "<group>"; };
@@ -184,7 +182,6 @@
 				A8C2837E2C20D41300506A5B /* Extensions */,
 				A82DAEFF2C20889300E18665 /* TabBar */,
 				A82DAF062C208EEB00E18665 /* CustomBlurView.swift */,
-				A8C283582C20CCDC00506A5B /* FilterService.swift */,
 				A84E30932C21907E002F6E0A /* CameraManager.swift */,
 			);
 			path = "UI Helpers";
@@ -420,7 +417,6 @@
 				A8C283862C20DA2900506A5B /* DeepARViewController.swift in Sources */,
 				A8C2837D2C20CEA400506A5B /* DeepAREffect.swift in Sources */,
 				A84E30942C21907E002F6E0A /* CameraManager.swift in Sources */,
-				A8C283592C20CCDC00506A5B /* FilterService.swift in Sources */,
 				A8C283822C20D60500506A5B /* UserCredentials.swift in Sources */,
 				A8C283572C20BF4300506A5B /* DeepARSwiftUIView.swift in Sources */,
 				A82DAEEC2C2083F600E18665 /* FaceMemoApp.xcdatamodeld in Sources */,
