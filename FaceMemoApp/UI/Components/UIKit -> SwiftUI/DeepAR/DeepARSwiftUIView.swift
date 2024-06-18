@@ -6,14 +6,14 @@
 //
 
 import SwiftUI
-import DeepAR
 
 struct DeepARSwiftUIView: UIViewControllerRepresentable {
+    @ObservedObject var cameraManager: CameraManager
     @Binding var effect: DeepAREffect
     
     func makeUIViewController(context: Context) -> DeepARViewController {
-        let deepARViewController = DeepARViewController(effect: effect)
-        return deepARViewController
+        let viewController = DeepARViewController(cameraManager: cameraManager, effect: effect)
+        return viewController
     }
     
     func updateUIViewController(_ uiViewController: DeepARViewController, context: Context) {

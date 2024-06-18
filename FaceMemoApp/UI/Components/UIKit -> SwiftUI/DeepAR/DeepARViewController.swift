@@ -7,13 +7,16 @@
 
 import UIKit
 import DeepAR
+import PhotosUI
 
 class DeepARViewController: UIViewController, DeepARDelegate {
-    var effect: DeepAREffect?
+    var cameraManager: CameraManager
+    var effect: DeepAREffect
     var deepAR: DeepAR!
-    var cameraController: CameraController?
+    var cameraController: CameraController!
     
-    init(effect: DeepAREffect?) {
+    init(cameraManager: CameraManager, effect: DeepAREffect) {
+        self.cameraManager = cameraManager
         self.effect = effect
         super.init(nibName: nil, bundle: .main)
     }
@@ -28,6 +31,7 @@ class DeepARViewController: UIViewController, DeepARDelegate {
         /// - Initialize DeepAR
         deepAR = DeepAR()
         deepAR.delegate = self
+        self.deepAR.setLicenseKey(Constants.deepARLicenseKey)
         
         /// - Create ARView
         guard let arView = deepAR.createARView(withFrame: self.view.bounds) else { return }
@@ -42,32 +46,29 @@ class DeepARViewController: UIViewController, DeepARDelegate {
             arView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
         
-        /// - Initialize and start camera controller
+        cameraManager.deepAR = deepAR
+        
         cameraController = CameraController()
         cameraController?.deepAR = deepAR
+        self.deepAR.videoRecordingWarmupEnabled = true
         cameraController?.startCamera(withAudio: true)
         
         /// - Load a filter
         switchEffect(effect: effect)
-        
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        if let cameraController {
-            cameraController.startCamera()
-        }
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        cameraController?.stopCamera()
-        
-    }
     
     func switchEffect(effect: DeepAREffect?) {
         if let path = effect?.path {
             deepAR.switchEffect(withSlot: "effect", path: path)
         }
     }
+    
+    
+    
+    func didInitialize() {
+        print("didInitialize")
+    }
+    
+    
 }
