@@ -10,7 +10,7 @@ import StreamVideoSwiftUI
 import StreamVideo
 
 struct HomeView: View {
-    @StateObject var filterService = FilterService()
+    @ObservedObject var filterService = FilterService()
     
     var body: some View {
         ZStack {
@@ -19,7 +19,6 @@ struct HomeView: View {
                 effectsView
                 Spacer()
             }
-            .padding(.bottom, 50)
         }
     }
     

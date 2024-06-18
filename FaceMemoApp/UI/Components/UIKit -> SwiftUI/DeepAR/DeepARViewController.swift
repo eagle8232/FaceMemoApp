@@ -15,7 +15,7 @@ class DeepARViewController: UIViewController, DeepARDelegate {
     
     init(effect: DeepAREffect?) {
         self.effect = effect
-        super.init(nibName: nil, bundle: nil)
+        super.init(nibName: nil, bundle: .main)
     }
     
     required init?(coder: NSCoder) {
@@ -49,6 +49,20 @@ class DeepARViewController: UIViewController, DeepARDelegate {
         
         /// - Load a filter
         switchEffect(effect: effect)
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let cameraController {
+            cameraController.startCamera()
+        }
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        cameraController?.stopCamera()
+        
     }
     
     func switchEffect(effect: DeepAREffect?) {

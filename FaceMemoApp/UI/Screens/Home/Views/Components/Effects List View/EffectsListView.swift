@@ -26,6 +26,6 @@ struct EffectsListView: View {
             }
             .padding()
         }
-        .frame(height: 100)
+        .frame(height: 90)
     }
 }
