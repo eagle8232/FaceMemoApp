@@ -13,10 +13,14 @@ enum MarketingType: String {
     case videos
 }
 
-class MarketingRepository {
+class MarketingRepository: ObservableObject {
+    
+    @Published var splashImageString: String?
+    @Published var splashUrlString: String?
+    @Published var showSplash: Bool = true
 
     let body: [String: [String]] = [
-        "marketingNames": ["encryptedalbum"]
+        "marketingNames": [Constants.marketingName]
     ]
     
     private let http: HTTPClient = .shared

@@ -9,6 +9,7 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
+    @StateObject var marketingRepository = MarketingRepository()
     @State var currentTab: Tabs = .home
     
     init() {
