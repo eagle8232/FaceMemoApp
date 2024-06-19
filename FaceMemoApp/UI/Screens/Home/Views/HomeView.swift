@@ -10,15 +10,17 @@ import StreamVideoSwiftUI
 import StreamVideo
 
 struct HomeView: View {
+    @StateObject var homeVM: HomeViewModel = HomeViewModel()
     
     var body: some View {
         ZStack {
-            CameraView()
+            CameraView { imageModel in
+                guard let imageModel else { return }
+                homeVM.images.append(imageModel)
+                homeVM.saveImages()
+            }
         }
     }
     
 }
 
-#Preview {
-    HomeView()
-}

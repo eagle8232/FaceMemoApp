@@ -12,6 +12,9 @@ struct CameraView: View {
     @State var selectedEffect: DeepAREffect = DeepAREffect.allCases.first!
     @State var capturedImage: UIImage?
     @State var showShareLink: Bool = false
+    
+    var saveToAlbum: (ImageModel?) -> Void
+    
     var body: some View {
         ZStack {
             contentView
@@ -20,15 +23,22 @@ struct CameraView: View {
                 Spacer()
                 captureButton
             }
-            .padding(.bottom, 50)
             
             if let capturedImage {
-                CustomAlertView(title: "Captured Photo", message: "Do you want to save this photo to your album?", image: Image(uiImage:capturedImage), isSubmitVisible: true, isShareVisible: true) {
+                CustomAlertView(
+                    title: "Captured Photo",
+                    message: "Do you want to save this photo to your album?",
+                    alertType: .saveImage,
+                    image: Image(uiImage: capturedImage)) {
+                        
                     /// After dismissing alert view, we need to set nil to capturedImage
                     self.capturedImage = nil
+                    
                 } submit: { // Submit Handler
-                    UIImageWriteToSavedPhotosAlbum(capturedImage, nil, nil, nil)
-                    /// After saving the phott, we need to set nil to capturedImage
+                    let imageModel = ImageModel(name: "Image with '\(selectedEffect.name)' effect", imageData: capturedImage.jpegData(compressionQuality: 1) ?? Data(), date: Date())
+                    saveToAlbum(imageModel)
+                    
+                    /// After saving the photo, we need to set nil to capturedImage
                     self.capturedImage = nil
                 }
             }
@@ -62,10 +72,7 @@ struct CameraView: View {
                }
            }
            .padding()
+           .padding(.bottom, Constants.bottomPaddingSize + 80) /// - Adding 16 more, as we already added padding to tab bar
        }
        
-}
-
-#Preview {
-    CameraView()
 }

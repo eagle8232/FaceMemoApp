@@ -10,8 +10,9 @@ import SwiftUI
 class Constants {
     // DeepAR License Key
     /// - We use license key to use DeepAR's filters
-    static let deepARLicenseKey: String = "761b251cb33e636bc596a0e055f494e1d8a3bb9c101f6edecaeffc33b92a2a0159690565fbe66621"
+    static let deepARLicenseKey: String = "7e7cc541b882d34c55773cfafbbfe884a66700f50ad34b5830342f72575b2b868cad631eb0d84044"
     
     static let cornerRadius: CGFloat = 10
     static let iconSize: CGFloat = 35
+    static let bottomPaddingSize: CGFloat = 32
 }

@@ -11,6 +11,10 @@ import CoreData
 struct ContentView: View {
     @State var currentTab: Tabs = .home
     
+    init() {
+        UITabBar.appearance().isHidden = true
+    }
+    
     var body: some View {
         ZStack {
             // Changed from switch method to TabView
@@ -19,12 +23,13 @@ struct ContentView: View {
                 HomeView()
                     .tag(Tabs.home)
                 
-                ZStack {}
+                RecentlyView()
                     .tag(Tabs.recently)
                 
                 ZStack {}
                     .tag(Tabs.settings)
             }
+            
             tabBarView
         }
     }
@@ -34,7 +39,7 @@ struct ContentView: View {
             Spacer()
             TabBarView(currentTab: $currentTab)
         }
-        .padding(.bottom, 16)
+        .padding(.bottom, Constants.bottomPaddingSize)
     }
     
 }

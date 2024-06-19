@@ -7,25 +7,44 @@
 
 import SwiftUI
 
+enum CustomAlertType {
+    case saveDescription
+    case saveImage
+    case none
+}
+
 struct CustomAlertView: View {
     let title: String
     let message: String
-    var image: Image? /// - If saves the image, it will show it
+    let alertType: CustomAlertType
     
-    var isSubmitVisible: Bool
-    var isShareVisible: Bool = false /// - Non visible by default
+    // Alert Values
+    @State var descriptionText: String = ""
+    @State var isEditing: Bool = false
+    var image: Image? /// - If saves the image, it will show it
     
     let dismiss: () -> Void
     var submit: (() -> Void)?
+    var submitText: ((String) -> Void)?
     
     var body: some View {
+        ZStack {
+            contentView
+        }
+    }
+    
+    // MARK: - Content View
+    
+    var contentView: some View {
         VStack {
+            // Title & Message Views
             VStack {
                 HStack {
                     Text(title)
                         .font(.title)
                         .fontWeight(.bold)
-                    if isShareVisible {
+                    if alertType == .saveImage {
+                        Spacer()
                         /// - We make force unwrapping, as we already set value to 'image' to share it
                         ShareLink(item: image!, preview: SharePreview("Filtered Image", image: image!)) {
                             Label("Share", systemImage: "square.and.arrow.up")
@@ -33,20 +52,41 @@ struct CustomAlertView: View {
                         .padding(.leading)
                     }
                 }
-                
                 Divider()
                 
                 Text(message)
                     .font(.callout)
             }
             
-            if let image {
-                image
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 250, height: 250)
+            // Saving Data View
+            switch alertType {
+                
+            case .saveDescription:
+                VStack(alignment: .trailing) {
+                    Button(isEditing ? "Done" : "Edit") {
+                        isEditing.toggle()
+                    }
+                    
+                    CustomTextField(text: $descriptionText, isEditing: $isEditing)
+                        .background {
+                            CustomBlurView(style: .dark)
+                                .clipShape(RoundedRectangle(cornerRadius: Constants.cornerRadius))
+                        }
+                        .frame(height: 200)
+                }
+            case .saveImage:
+                if let image {
+                    image
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 250, height: 250)
+                }
+                
+            case .none:
+                ZStack {} /// - Show nothing
             }
             
+            // Action Buttons
             buttonsView
         }
         .padding()
@@ -66,13 +106,17 @@ struct CustomAlertView: View {
             .foregroundStyle(.white)
             
             // Submit Button (If needed)
-            if isSubmitVisible {
+            if alertType != .none {
                 CustomButton(style: .rounded("Submit", nil), blurStyle: .extraLight) {
-                    submit?()
+                    if alertType == .saveDescription {
+                        submitText?(descriptionText)
+                    } else {
+                        submit?()
+                    }
                 }
                 .foregroundStyle(.gray)
             }
+            
         }
     }
-    
 }
