@@ -52,12 +52,20 @@ class DeepARViewController: UIViewController, DeepARDelegate {
         cameraController = CameraController()
         cameraController?.deepAR = deepAR
         self.deepAR.videoRecordingWarmupEnabled = true
-        cameraController?.startCamera(withAudio: true)
         
         /// - Load a filter
         switchEffect(effect: effect)
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        cameraController?.stopCamera()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        cameraController?.startCamera(withAudio: true)
+    }
     
     func switchEffect(effect: DeepAREffect?) {
         if let path = effect?.path {
