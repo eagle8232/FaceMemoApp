@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A80D265F2C23864C007A20CE /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80D265E2C23864C007A20CE /* HTTPClient.swift */; };
+		A80D26612C23868A007A20CE /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80D26602C23868A007A20CE /* HTTPMethod.swift */; };
+		A80D26632C23879E007A20CE /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80D26622C23879E007A20CE /* Model.swift */; };
+		A80D26652C238851007A20CE /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80D26642C238851007A20CE /* EndPoint.swift */; };
+		A80D26682C23886C007A20CE /* EndPointProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80D26672C23886C007A20CE /* EndPointProtocol.swift */; };
+		A80D266B2C238F65007A20CE /* MarketingRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80D266A2C238F65007A20CE /* MarketingRepository.swift */; };
+		A80D266D2C239049007A20CE /* JSONConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80D266C2C239049007A20CE /* JSONConverter.swift */; };
 		A82DAEE02C2083F500E18665 /* FaceMemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82DAEDF2C2083F500E18665 /* FaceMemoApp.swift */; };
 		A82DAEE22C2083F500E18665 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82DAEE12C2083F500E18665 /* ContentView.swift */; };
 		A82DAEE42C2083F600E18665 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A82DAEE32C2083F600E18665 /* Assets.xcassets */; };
@@ -59,6 +66,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A80D265E2C23864C007A20CE /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		A80D26602C23868A007A20CE /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		A80D26622C23879E007A20CE /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		A80D26642C238851007A20CE /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
+		A80D26672C23886C007A20CE /* EndPointProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointProtocol.swift; sourceTree = "<group>"; };
+		A80D266A2C238F65007A20CE /* MarketingRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketingRepository.swift; sourceTree = "<group>"; };
+		A80D266C2C239049007A20CE /* JSONConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONConverter.swift; sourceTree = "<group>"; };
 		A82DAEDC2C2083F500E18665 /* FaceMemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceMemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A82DAEDF2C2083F500E18665 /* FaceMemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceMemoApp.swift; sourceTree = "<group>"; };
 		A82DAEE12C2083F500E18665 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -122,6 +136,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A80D265D2C23860B007A20CE /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				A80D26692C23897B007A20CE /* HTTP */,
+				A80D26662C238861007A20CE /* EndPoint */,
+				A80D26622C23879E007A20CE /* Model.swift */,
+				A80D266A2C238F65007A20CE /* MarketingRepository.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		A80D26662C238861007A20CE /* EndPoint */ = {
+			isa = PBXGroup;
+			children = (
+				A80D26642C238851007A20CE /* EndPoint.swift */,
+				A80D26672C23886C007A20CE /* EndPointProtocol.swift */,
+			);
+			path = EndPoint;
+			sourceTree = "<group>";
+		};
+		A80D26692C23897B007A20CE /* HTTP */ = {
+			isa = PBXGroup;
+			children = (
+				A80D265E2C23864C007A20CE /* HTTPClient.swift */,
+				A80D26602C23868A007A20CE /* HTTPMethod.swift */,
+			);
+			path = HTTP;
+			sourceTree = "<group>";
+		};
 		A82DAED32C2083F500E18665 = {
 			isa = PBXGroup;
 			children = (
@@ -160,8 +203,10 @@
 		A82DAEF22C20864800E18665 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				A80D265D2C23860B007A20CE /* Networking */,
 				A82DAEE82C2083F600E18665 /* Persistence.swift */,
 				A82DAF042C208AD100E18665 /* Constants.swift */,
+				A80D266C2C239049007A20CE /* JSONConverter.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -507,20 +552,26 @@
 				A8C283882C20E35F00506A5B /* EffectCellView.swift in Sources */,
 				A8610C432C2224D30042CACC /* RecentlyView.swift in Sources */,
 				A8610C452C2224ED0042CACC /* StorageManager.swift in Sources */,
+				A80D265F2C23864C007A20CE /* HTTPClient.swift in Sources */,
 				A82DAF032C2088A900E18665 /* Tabs.swift in Sources */,
 				A82DAEE92C2083F600E18665 /* Persistence.swift in Sources */,
+				A80D26612C23868A007A20CE /* HTTPMethod.swift in Sources */,
 				A84E30922C217CC4002F6E0A /* CameraView.swift in Sources */,
+				A80D266B2C238F65007A20CE /* MarketingRepository.swift in Sources */,
+				A80D26652C238851007A20CE /* EndPoint.swift in Sources */,
 				A82DAEE22C2083F500E18665 /* ContentView.swift in Sources */,
 				A8C2838B2C20E37C00506A5B /* EffectsListView.swift in Sources */,
 				A8C283862C20DA2900506A5B /* DeepARViewController.swift in Sources */,
 				A8610C532C222ED20042CACC /* HomeViewModel.swift in Sources */,
 				A8C2837D2C20CEA400506A5B /* DeepAREffect.swift in Sources */,
 				A8610C472C2228590042CACC /* ImageModel.swift in Sources */,
+				A80D26632C23879E007A20CE /* Model.swift in Sources */,
 				A8610C4D2C222BD60042CACC /* ImageCellView.swift in Sources */,
 				A84E30942C21907E002F6E0A /* CameraManager.swift in Sources */,
 				A8610C512C222E860042CACC /* StorageDelegate.swift in Sources */,
 				A8C283572C20BF4300506A5B /* DeepARSwiftUIView.swift in Sources */,
 				A82DAEEC2C2083F600E18665 /* FaceMemoApp.xcdatamodeld in Sources */,
+				A80D26682C23886C007A20CE /* EndPointProtocol.swift in Sources */,
 				A82DAEFD2C20881800E18665 /* HomeView.swift in Sources */,
 				A8610C3D2C21F7CC0042CACC /* CustomAlertView.swift in Sources */,
 				A82DAF012C20889F00E18665 /* TabBarView.swift in Sources */,
@@ -530,6 +581,7 @@
 				A82DAEE02C2083F500E18665 /* FaceMemoApp.swift in Sources */,
 				A82DAF052C208AD100E18665 /* Constants.swift in Sources */,
 				A8610C492C222A7C0042CACC /* RecentlyViewModel.swift in Sources */,
+				A80D266D2C239049007A20CE /* JSONConverter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
