@@ -6,8 +6,6 @@
 //
 
 import SwiftUI
-import StreamVideoSwiftUI
-import StreamVideo
 
 struct HomeView: View {
     @StateObject var homeVM: HomeViewModel = HomeViewModel()

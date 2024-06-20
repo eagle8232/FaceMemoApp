@@ -44,8 +44,6 @@
 		A8610C512C222E860042CACC /* StorageDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8610C502C222E860042CACC /* StorageDelegate.swift */; };
 		A8610C532C222ED20042CACC /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8610C522C222ED20042CACC /* HomeViewModel.swift */; };
 		A8610C562C22C6F60042CACC /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8610C552C22C6F60042CACC /* CustomTextField.swift */; };
-		A8C2834F2C20BDB100506A5B /* StreamVideo in Frameworks */ = {isa = PBXBuildFile; productRef = A8C2834E2C20BDB100506A5B /* StreamVideo */; };
-		A8C283512C20BDB100506A5B /* StreamVideoSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = A8C283502C20BDB100506A5B /* StreamVideoSwiftUI */; };
 		A8C283542C20BEEA00506A5B /* DeepAR in Frameworks */ = {isa = PBXBuildFile; productRef = A8C283532C20BEEA00506A5B /* DeepAR */; };
 		A8C283572C20BF4300506A5B /* DeepARSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C283562C20BF4300506A5B /* DeepARSwiftUIView.swift */; };
 		A8C2836B2C20CE7400506A5B /* ray-ban-wayfarer.deepar in Resources */ = {isa = PBXBuildFile; fileRef = A8C2835B2C20CE7300506A5B /* ray-ban-wayfarer.deepar */; };
@@ -139,8 +137,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A83009EB2C242D7800589DA0 /* SDWebImageSwiftUI in Frameworks */,
-				A8C283512C20BDB100506A5B /* StreamVideoSwiftUI in Frameworks */,
-				A8C2834F2C20BDB100506A5B /* StreamVideo in Frameworks */,
 				A8C283542C20BEEA00506A5B /* DeepAR in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -526,8 +522,6 @@
 			);
 			name = FaceMemoApp;
 			packageProductDependencies = (
-				A8C2834E2C20BDB100506A5B /* StreamVideo */,
-				A8C283502C20BDB100506A5B /* StreamVideoSwiftUI */,
 				A8C283532C20BEEA00506A5B /* DeepAR */,
 				A83009EA2C242D7800589DA0 /* SDWebImageSwiftUI */,
 			);
@@ -560,7 +554,6 @@
 			);
 			mainGroup = A82DAED32C2083F500E18665;
 			packageReferences = (
-				A8C2834D2C20BDB100506A5B /* XCRemoteSwiftPackageReference "stream-video-swift" */,
 				A8C283522C20BEEA00506A5B /* XCRemoteSwiftPackageReference "swift-deepar" */,
 				A83009E92C242D7800589DA0 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
@@ -879,14 +872,6 @@
 				minimumVersion = 3.0.4;
 			};
 		};
-		A8C2834D2C20BDB100506A5B /* XCRemoteSwiftPackageReference "stream-video-swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/GetStream/stream-video-swift";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.7;
-			};
-		};
 		A8C283522C20BEEA00506A5B /* XCRemoteSwiftPackageReference "swift-deepar" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/DeepARSDK/swift-deepar";
@@ -902,16 +887,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A83009E92C242D7800589DA0 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
 			productName = SDWebImageSwiftUI;
-		};
-		A8C2834E2C20BDB100506A5B /* StreamVideo */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A8C2834D2C20BDB100506A5B /* XCRemoteSwiftPackageReference "stream-video-swift" */;
-			productName = StreamVideo;
-		};
-		A8C283502C20BDB100506A5B /* StreamVideoSwiftUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A8C2834D2C20BDB100506A5B /* XCRemoteSwiftPackageReference "stream-video-swift" */;
-			productName = StreamVideoSwiftUI;
 		};
 		A8C283532C20BEEA00506A5B /* DeepAR */ = {
 			isa = XCSwiftPackageProductDependency;
