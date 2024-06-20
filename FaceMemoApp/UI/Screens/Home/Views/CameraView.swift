@@ -6,9 +6,10 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct CameraView: View {
-    @StateObject var cameraManager = CameraManager()
+    @ObservedObject var cameraManager = CameraManager()
     @State var selectedEffect: DeepAREffect = DeepAREffect.allCases.first!
     @State var capturedImage: UIImage?
     @State var showShareLink: Bool = false
@@ -19,7 +20,10 @@ struct CameraView: View {
         ZStack {
             contentView
             VStack {
-                effectsView
+                VStack {
+                    effectsView
+                    bannerView
+                }
                 Spacer()
                 captureButton
             }
@@ -31,16 +35,16 @@ struct CameraView: View {
                     alertType: .saveImage,
                     image: Image(uiImage: capturedImage)) {
                         
-                    /// After dismissing alert view, we need to set nil to capturedImage
-                    self.capturedImage = nil
-                    
-                } submit: { // Submit Handler
-                    let imageModel = ImageModel(name: "Image with '\(selectedEffect.name)' effect", imageData: capturedImage.jpegData(compressionQuality: 1) ?? Data(), date: Date())
-                    saveToAlbum(imageModel)
-                    
-                    /// After saving the photo, we need to set nil to capturedImage
-                    self.capturedImage = nil
-                }
+                        /// After dismissing alert view, we need to set nil to capturedImage
+                        self.capturedImage = nil
+                        
+                    } submit: { // Submit Handler
+                        let imageModel = ImageModel(name: "Image with '\(selectedEffect.name)' effect", imageData: capturedImage.jpegData(compressionQuality: 1) ?? Data(), date: Date())
+                        saveToAlbum(imageModel)
+                        
+                        /// After saving the photo, we need to set nil to capturedImage
+                        self.capturedImage = nil
+                    }
             }
         }
     }
@@ -57,22 +61,52 @@ struct CameraView: View {
     }
     
     var captureButton: some View {
-           Button(action: {
-               cameraManager.takePicture()
-           }) {
-               ZStack {
-                   Image(uiImage: .camera)
-                       .resizable()
-                       .frame(width: 40, height: 40)
-                       .padding()
-                       .background {
-                           Circle()
-                               .fill(Color.white)
-                       }
-               }
-           }
-           .padding()
-           .padding(.bottom, Constants.bottomPaddingSize + 80) /// - Adding 16 more, as we already added padding to tab bar
-       }
-       
+        Button(action: {
+            cameraManager.takePicture()
+        }) {
+            ZStack {
+                Image(uiImage: .camera)
+                    .resizable()
+                    .frame(width: 40, height: 40)
+                    .padding()
+                    .background {
+                        Circle()
+                            .fill(Color.white)
+                    }
+            }
+        }
+        .padding()
+        .padding(.bottom, Constants.bottomPaddingSize + 80) /// - Adding 16 more, as we already added padding to tab bar
+    }
+    
+    // MARK: - Marketing Banner Ads View
+    var marketingRepository: MarketingRepository = MarketingRepository()
+    
+    @State var marketingImageString: String?
+    @State var marketingUrlString: String?
+    
+    var bannerView: some View {
+        ZStack {
+            if marketingImageString != "" {
+                WebImage(url: URL(string: marketingImageString ?? ""))
+                    .resizable()
+                    .frame(height: 200)
+                    .cornerRadius(10)
+                    .padding()
+                    .onTapGesture {
+                        if let urlString = marketingUrlString, let url = URL(string: urlString) {
+                            UIApplication.shared.open(url)
+                        }
+                    }
+            }
+        }
+        .onAppear {
+            Task {
+                await marketingRepository.getBannerAds { data in
+                    marketingImageString = data?.fileLink
+                    marketingUrlString = data?.url
+                }
+            }
+        }
+    }
 }
