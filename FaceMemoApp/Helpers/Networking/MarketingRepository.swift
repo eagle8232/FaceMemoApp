@@ -7,7 +7,7 @@
 
 import Foundation
 
-class MarketingRepository: ObservableObject {
+class MarketingRepository {
     
     let body: [String: [String]] = [
         "marketingNames": [Constants.marketingName]
@@ -17,7 +17,6 @@ class MarketingRepository: ObservableObject {
     
     // MARK: - Public Functions
     
-    @MainActor
     public func getSplashAds(completion: @escaping (DataResponse?) -> Void) async {
         let marketingData = await getMarketingData(endPoint: .marketingSplashAds)
         
@@ -27,8 +26,8 @@ class MarketingRepository: ObservableObject {
         }
     }
     
-    @MainActor
     public func getBannerAds(completion: @escaping (DataResponse?) -> Void) async {
+        
         let marketingData = await getMarketingData(endPoint: .marketingAds)
         
         if let data = marketingData?.data,
@@ -37,7 +36,6 @@ class MarketingRepository: ObservableObject {
         }
     }
     
-    @MainActor
     public func getVideoAds(completion: @escaping (DataResponse?) -> Void) async {
         let marketingData = await getMarketingData(endPoint: .marketingVideos)
         

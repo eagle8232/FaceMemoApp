@@ -9,7 +9,7 @@ import SwiftUI
 import SDWebImageSwiftUI
 
 struct CameraView: View {
-    @ObservedObject var cameraManager = CameraManager()
+    @StateObject var cameraManager = CameraManager()
     @State var selectedEffect: DeepAREffect = DeepAREffect.allCases.first!
     @State var capturedImage: UIImage?
     @State var showShareLink: Bool = false
@@ -87,8 +87,8 @@ struct CameraView: View {
     
     var bannerView: some View {
         ZStack {
-            if marketingImageString != "" {
-                WebImage(url: URL(string: marketingImageString ?? ""))
+            if marketingImageString != nil, let url = URL(string: marketingImageString ?? "") {
+                WebImage(url: url)
                     .resizable()
                     .frame(height: 200)
                     .cornerRadius(10)

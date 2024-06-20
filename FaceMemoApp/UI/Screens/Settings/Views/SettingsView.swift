@@ -81,7 +81,7 @@ struct SettingsView: View {
     
     var bannerView: some View {
         ZStack {
-            if marketingImageString != "" {
+            if marketingImageString != nil {
                 WebImage(url: URL(string: marketingImageString ?? ""))
                     .resizable()
                     .frame(height: 200)
