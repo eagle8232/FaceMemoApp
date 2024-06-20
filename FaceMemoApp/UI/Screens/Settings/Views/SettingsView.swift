@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct SettingsView: View {
     @StateObject var settingsVM: SettingsViewModel = SettingsViewModel()
@@ -15,11 +16,12 @@ struct SettingsView: View {
     var body: some View {
         ZStack {
             VStack(alignment: .leading) {
-                
-                Text("Settings")
-                    .font(.system(size: 25, weight: .bold))
-                    .padding()
-                
+                VStack(alignment: .leading) {
+                    Text("Settings")
+                        .font(.system(size: 25, weight: .bold))
+                        .padding()
+                    bannerView
+                }
                 contentView
             }
             
@@ -27,7 +29,7 @@ struct SettingsView: View {
                 AboutUsView(isPresentingAboutUs: $isPresentingAboutUs)
             }
         }
-    
+        
     }
     
     var contentView: some View {
@@ -70,6 +72,39 @@ struct SettingsView: View {
             .padding(8)
         }
     }
+    
+    // MARK: - Marketing Banner Ads View
+    var marketingRepository: MarketingRepository = MarketingRepository()
+    
+    @State var marketingImageString: String?
+    @State var marketingUrlString: String?
+    
+    var bannerView: some View {
+        ZStack {
+            if marketingImageString != "" {
+                WebImage(url: URL(string: marketingImageString ?? ""))
+                    .resizable()
+                    .frame(height: 200)
+                    .cornerRadius(10)
+                    .padding()
+                    .onTapGesture {
+                        if let urlString = marketingUrlString, let url = URL(string: urlString) {
+                            UIApplication.shared.open(url)
+                        }
+                    }
+            }
+        }
+        .onAppear {
+            Task {
+                await marketingRepository.getBannerAds { data in
+                    marketingImageString = data?.fileLink
+                    marketingUrlString = data?.url
+                }
+            }
+        }
+    }
+    
+    
     
     func openSafari(parameter: Settings) {
         var url: URL?

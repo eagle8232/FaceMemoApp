@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+import _AVKit_SwiftUI
+
 struct RecentlyView: View {
     @StateObject var recentrlyVM: RecentlyViewModel = RecentlyViewModel()
     @State var currentDescriptionText: String = ""
@@ -29,15 +31,18 @@ struct RecentlyView: View {
     var contentView: some View {
         VStack(alignment: .leading) {
             // Heading
-            HStack {
-                Text("Recently Captured")
-                    .font(.system(size: 25, weight: .bold))
-                Spacer()
-                CustomButton(style: .rounded(isEditing ? "Done" : "Edit", nil)) {
-                    withAnimation {
-                        isEditing.toggle()
+            VStack {
+                HStack {
+                    Text("Recently Captured")
+                        .font(.system(size: 25, weight: .bold))
+                    Spacer()
+                    CustomButton(style: .rounded(isEditing ? "Done" : "Edit", nil)) {
+                        withAnimation {
+                            isEditing.toggle()
+                        }
                     }
                 }
+                videoBannerView
             }
             .padding()
             
@@ -80,6 +85,49 @@ struct RecentlyView: View {
         .padding()
         .padding(.bottom, Constants.bottomPaddingSize + 80)
     }
+    
+    // MARK: - Markeding Banner Ads
+    var marketingRepository: MarketingRepository = MarketingRepository()
+    
+    @State private var splashVideoString: String?
+    @State private var splashUrlString: String?
+    @State private var player: AVPlayer?
+    
+    var videoBannerView: some View {
+        ZStack {
+            if splashVideoString != nil {
+                VideoPlayer(player: player)
+                    .frame(height: 200)
+                    .cornerRadius(10)
+                    .padding()
+                    .onAppear {
+                        self.player = AVPlayer(url: URL(string: splashVideoString ?? "")!)
+                        self.player?.play()
+                        UIViewController.attemptRotationToDeviceOrientation()
+                    }
+                    .onDisappear {
+                        self.player?.pause()
+                        self.player = nil
+                    }
+                    .onTapGesture {
+                        if let urlString = splashUrlString, let url = URL(string: urlString) {
+                            UIApplication.shared.open(url)
+                        }
+                    }
+            }
+        }
+        .onAppear {
+            Task {
+                await marketingRepository.getVideoAds { data in
+                    self.splashUrlString = data?.url
+                    self.splashVideoString = data?.fileLink
+                    guard let url = URL(string: self.splashVideoString ?? "") else {return}
+                    self.player = AVPlayer(url: url)
+                }
+            }
+        }
+    }
+    
 }
 
 #Preview {

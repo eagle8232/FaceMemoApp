@@ -15,6 +15,8 @@ class DeepARViewController: UIViewController, DeepARDelegate {
     var deepAR: DeepAR!
     var cameraController: CameraController!
     
+    private let sessionQueue = DispatchQueue(label: "camera queue")
+    
     init(cameraManager: CameraManager, effect: DeepAREffect) {
         self.cameraManager = cameraManager
         self.effect = effect
@@ -53,18 +55,26 @@ class DeepARViewController: UIViewController, DeepARDelegate {
         cameraController?.deepAR = deepAR
         self.deepAR.videoRecordingWarmupEnabled = true
         
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            self?.cameraController.startCamera(withAudio: false)
+        }
+        
         /// - Load a filter
         switchEffect(effect: effect)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        cameraController?.stopCamera()
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            self?.cameraController.stopCamera()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        cameraController?.startCamera(withAudio: true)
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            self?.cameraController.startCamera(withAudio: false)
+        }
     }
     
     func switchEffect(effect: DeepAREffect?) {
@@ -72,8 +82,6 @@ class DeepARViewController: UIViewController, DeepARDelegate {
             deepAR.switchEffect(withSlot: "effect", path: path)
         }
     }
-    
-    
     
     func didInitialize() {
         print("didInitialize")

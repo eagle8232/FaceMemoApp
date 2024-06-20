@@ -6,20 +6,26 @@
 //
 
 import SwiftUI
-import CoreData
+import SDWebImageSwiftUI
 
 struct ContentView: View {
-    @StateObject var marketingRepository = MarketingRepository()
     @State var currentTab: Tabs = .home
     
     init() {
+        // Tab Bar Configure
         UITabBar.appearance().isHidden = true
     }
     
     var body: some View {
         ZStack {
+            contentView
+        }
+    }
+    
+    var contentView: some View {
+        ZStack {
             // Changed from switch method to TabView
-            //,/ - We use TabView method, to ensure all views are not updated again
+            /// - We use TabView method, to ensure all views are not updated again
             TabView(selection: $currentTab) {
                 HomeView()
                     .tag(Tabs.home)
@@ -42,5 +48,6 @@ struct ContentView: View {
         }
         .padding(.bottom, Constants.bottomPaddingSize)
     }
+   
     
 }

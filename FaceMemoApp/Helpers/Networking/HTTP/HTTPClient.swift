@@ -33,9 +33,11 @@ public final class HTTPClient {
               response.statusCode == 200 else { return nil }
         do {
             let decodedData = try JSONDecoder().decode(T.self, from: data)
+            print(decodedData)
             return decodedData
         } catch {
             print(error.localizedDescription)
+            print(error)
             return nil
         }
     }
@@ -43,7 +45,6 @@ public final class HTTPClient {
 }
 
 extension HTTPClient {
-    
     public func POST<T: Codable>(endPoint: EndPoint, body: Data) async -> T? {
         do {
             return try await request(endPoint: endPoint, httpMethod: .POST(body))

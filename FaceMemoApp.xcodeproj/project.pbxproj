@@ -30,6 +30,7 @@
 		A83009DE2C23F75E00589DA0 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83009DD2C23F75E00589DA0 /* SettingsModel.swift */; };
 		A83009E62C240D3500589DA0 /* SettingsInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83009E52C240D3500589DA0 /* SettingsInfoView.swift */; };
 		A83009E82C240FBF00589DA0 /* AboutUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83009E72C240FBF00589DA0 /* AboutUsView.swift */; };
+		A83009EB2C242D7800589DA0 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = A83009EA2C242D7800589DA0 /* SDWebImageSwiftUI */; };
 		A84E30922C217CC4002F6E0A /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84E30912C217CC4002F6E0A /* CameraView.swift */; };
 		A84E30942C21907E002F6E0A /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84E30932C21907E002F6E0A /* CameraManager.swift */; };
 		A8610C3D2C21F7CC0042CACC /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8610C3C2C21F7CC0042CACC /* CustomAlertView.swift */; };
@@ -137,6 +138,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A83009EB2C242D7800589DA0 /* SDWebImageSwiftUI in Frameworks */,
 				A8C283512C20BDB100506A5B /* StreamVideoSwiftUI in Frameworks */,
 				A8C2834F2C20BDB100506A5B /* StreamVideo in Frameworks */,
 				A8C283542C20BEEA00506A5B /* DeepAR in Frameworks */,
@@ -527,6 +529,7 @@
 				A8C2834E2C20BDB100506A5B /* StreamVideo */,
 				A8C283502C20BDB100506A5B /* StreamVideoSwiftUI */,
 				A8C283532C20BEEA00506A5B /* DeepAR */,
+				A83009EA2C242D7800589DA0 /* SDWebImageSwiftUI */,
 			);
 			productName = FaceMemoApp;
 			productReference = A82DAEDC2C2083F500E18665 /* FaceMemoApp.app */;
@@ -559,6 +562,7 @@
 			packageReferences = (
 				A8C2834D2C20BDB100506A5B /* XCRemoteSwiftPackageReference "stream-video-swift" */,
 				A8C283522C20BEEA00506A5B /* XCRemoteSwiftPackageReference "swift-deepar" */,
+				A83009E92C242D7800589DA0 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			productRefGroup = A82DAEDD2C2083F500E18665 /* Products */;
 			projectDirPath = "";
@@ -786,6 +790,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -823,6 +828,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -865,6 +871,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		A83009E92C242D7800589DA0 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.4;
+			};
+		};
 		A8C2834D2C20BDB100506A5B /* XCRemoteSwiftPackageReference "stream-video-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/GetStream/stream-video-swift";
@@ -884,6 +898,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		A83009EA2C242D7800589DA0 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A83009E92C242D7800589DA0 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
 		A8C2834E2C20BDB100506A5B /* StreamVideo */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = A8C2834D2C20BDB100506A5B /* XCRemoteSwiftPackageReference "stream-video-swift" */;
