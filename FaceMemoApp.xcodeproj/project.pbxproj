@@ -25,6 +25,11 @@
 		A82DAF032C2088A900E18665 /* Tabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82DAF022C2088A900E18665 /* Tabs.swift */; };
 		A82DAF052C208AD100E18665 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82DAF042C208AD100E18665 /* Constants.swift */; };
 		A82DAF072C208EEB00E18665 /* CustomBlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82DAF062C208EEB00E18665 /* CustomBlurView.swift */; };
+		A83009DA2C23F74900589DA0 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83009D92C23F74900589DA0 /* SettingsViewModel.swift */; };
+		A83009DC2C23F74F00589DA0 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83009DB2C23F74F00589DA0 /* SettingsView.swift */; };
+		A83009DE2C23F75E00589DA0 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83009DD2C23F75E00589DA0 /* SettingsModel.swift */; };
+		A83009E62C240D3500589DA0 /* SettingsInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83009E52C240D3500589DA0 /* SettingsInfoView.swift */; };
+		A83009E82C240FBF00589DA0 /* AboutUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83009E72C240FBF00589DA0 /* AboutUsView.swift */; };
 		A84E30922C217CC4002F6E0A /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84E30912C217CC4002F6E0A /* CameraView.swift */; };
 		A84E30942C21907E002F6E0A /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84E30932C21907E002F6E0A /* CameraManager.swift */; };
 		A8610C3D2C21F7CC0042CACC /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8610C3C2C21F7CC0042CACC /* CustomAlertView.swift */; };
@@ -85,6 +90,11 @@
 		A82DAF022C2088A900E18665 /* Tabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabs.swift; sourceTree = "<group>"; };
 		A82DAF042C208AD100E18665 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A82DAF062C208EEB00E18665 /* CustomBlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBlurView.swift; sourceTree = "<group>"; };
+		A83009D92C23F74900589DA0 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		A83009DB2C23F74F00589DA0 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		A83009DD2C23F75E00589DA0 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
+		A83009E52C240D3500589DA0 /* SettingsInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInfoView.swift; sourceTree = "<group>"; };
+		A83009E72C240FBF00589DA0 /* AboutUsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsView.swift; sourceTree = "<group>"; };
 		A84E30912C217CC4002F6E0A /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		A84E30932C21907E002F6E0A /* CameraManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
 		A8610C3C2C21F7CC0042CACC /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
@@ -235,6 +245,7 @@
 		A82DAEF52C20866D00E18665 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				A83009D52C23F71600589DA0 /* Settings */,
 				A8610C382C21F5980042CACC /* Recently */,
 				A82DAEF72C20868200E18665 /* Home */,
 			);
@@ -302,6 +313,50 @@
 				A82DAF022C2088A900E18665 /* Tabs.swift */,
 			);
 			path = TabBar;
+			sourceTree = "<group>";
+		};
+		A83009D52C23F71600589DA0 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				A83009D82C23F73300589DA0 /* ViewModels */,
+				A83009D72C23F72D00589DA0 /* Models */,
+				A83009D62C23F72100589DA0 /* Views */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		A83009D62C23F72100589DA0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A83009DF2C23F98900589DA0 /* Components */,
+				A83009DB2C23F74F00589DA0 /* SettingsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A83009D72C23F72D00589DA0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A83009DD2C23F75E00589DA0 /* SettingsModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A83009D82C23F73300589DA0 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				A83009D92C23F74900589DA0 /* SettingsViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A83009DF2C23F98900589DA0 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				A83009E52C240D3500589DA0 /* SettingsInfoView.swift */,
+				A83009E72C240FBF00589DA0 /* AboutUsView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		A8610C372C21F5000042CACC /* Managers */ = {
@@ -560,16 +615,20 @@
 				A80D266B2C238F65007A20CE /* MarketingRepository.swift in Sources */,
 				A80D26652C238851007A20CE /* EndPoint.swift in Sources */,
 				A82DAEE22C2083F500E18665 /* ContentView.swift in Sources */,
+				A83009E62C240D3500589DA0 /* SettingsInfoView.swift in Sources */,
 				A8C2838B2C20E37C00506A5B /* EffectsListView.swift in Sources */,
 				A8C283862C20DA2900506A5B /* DeepARViewController.swift in Sources */,
+				A83009DC2C23F74F00589DA0 /* SettingsView.swift in Sources */,
 				A8610C532C222ED20042CACC /* HomeViewModel.swift in Sources */,
 				A8C2837D2C20CEA400506A5B /* DeepAREffect.swift in Sources */,
 				A8610C472C2228590042CACC /* ImageModel.swift in Sources */,
 				A80D26632C23879E007A20CE /* Model.swift in Sources */,
+				A83009DE2C23F75E00589DA0 /* SettingsModel.swift in Sources */,
 				A8610C4D2C222BD60042CACC /* ImageCellView.swift in Sources */,
 				A84E30942C21907E002F6E0A /* CameraManager.swift in Sources */,
 				A8610C512C222E860042CACC /* StorageDelegate.swift in Sources */,
 				A8C283572C20BF4300506A5B /* DeepARSwiftUIView.swift in Sources */,
+				A83009E82C240FBF00589DA0 /* AboutUsView.swift in Sources */,
 				A82DAEEC2C2083F600E18665 /* FaceMemoApp.xcdatamodeld in Sources */,
 				A80D26682C23886C007A20CE /* EndPointProtocol.swift in Sources */,
 				A82DAEFD2C20881800E18665 /* HomeView.swift in Sources */,
@@ -582,6 +641,7 @@
 				A82DAF052C208AD100E18665 /* Constants.swift in Sources */,
 				A8610C492C222A7C0042CACC /* RecentlyViewModel.swift in Sources */,
 				A80D266D2C239049007A20CE /* JSONConverter.swift in Sources */,
+				A83009DA2C23F74900589DA0 /* SettingsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

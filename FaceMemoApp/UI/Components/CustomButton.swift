@@ -18,7 +18,7 @@ struct CustomButton: View {
     var style: ButtonStyle = .circled(nil, nil)
     var font: Font = .system(size: 15, weight: .medium)
     var blurStyle: UIBlurEffect.Style = .light
-    var buttonSize: CGFloat = 15
+    var size: CGFloat = 15
     
     // - Functionality
     let handler: () -> Void
@@ -48,7 +48,7 @@ struct CustomButton: View {
                 if let image {
                     image
                         .resizable()
-                        .frame(width: buttonSize, height: buttonSize)
+                        .frame(width: size, height: size)
                 }
                 
                 if let title {
@@ -72,7 +72,7 @@ struct CustomButton: View {
                 if let image {
                     image
                         .resizable()
-                        .frame(width: buttonSize, height: buttonSize)
+                        .frame(width: size, height: size)
                 }
                 
                 if let title {
