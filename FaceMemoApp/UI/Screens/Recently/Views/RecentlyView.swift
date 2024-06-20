@@ -39,7 +39,7 @@ struct RecentlyView: View {
                     }
                 }
             }
-                .padding()
+            .padding()
             
             // List View
             ImagesListView(isEditing: $isEditing, selectedImageModels: $selectedImageModels, imageModels: recentrlyVM.imageModels) { imageModel in
@@ -69,7 +69,7 @@ struct RecentlyView: View {
         VStack(alignment: .trailing) {
             if isEditing {
                 Spacer()
-                CustomButton(style: .rounded(nil, Image(systemName: "trash")), buttonSize: 30) {
+                CustomButton(style: .rounded(nil, Image(systemName: "trash")), size: 30) {
                     recentrlyVM.deleteSelectedImageModels(selectedImageModels)
                     withAnimation {
                         isEditing = false /// - After deleting image models, set 'isEditing' to false, as it is better for UX

@@ -19,7 +19,7 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             // Changed from switch method to TabView
-            /// - We use TabView method, to ensure all views are not updated again
+            //,/ - We use TabView method, to ensure all views are not updated again
             TabView(selection: $currentTab) {
                 HomeView()
                     .tag(Tabs.home)
@@ -27,7 +27,7 @@ struct ContentView: View {
                 RecentlyView()
                     .tag(Tabs.recently)
                 
-                ZStack {}
+                SettingsView()
                     .tag(Tabs.settings)
             }
             
