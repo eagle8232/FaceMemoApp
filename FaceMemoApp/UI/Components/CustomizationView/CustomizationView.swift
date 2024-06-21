@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CustomizationView: View {
-    let selectedImage: Image
+    let selectedImage: UIImage
     
     @Binding var showView: Bool
     @State var selectedSticker: Stickers?
@@ -19,10 +19,11 @@ struct CustomizationView: View {
         }
     }
     
+    // MARK: - Action Buttons
+    
     /// - Buttons such as cancel and save
     var actionButtons: some View {
         VStack {
-            
             HStack(alignment: .center) {
                 
                 // Cancel Button

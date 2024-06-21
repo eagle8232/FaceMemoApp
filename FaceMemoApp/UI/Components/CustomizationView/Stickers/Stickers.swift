@@ -7,6 +7,12 @@
 
 import SwiftUI
 
+/**
+ - Parameter name: The name of the sticker
+ - Parameter path: The path to already downloaded sticker
+ */
+
+
 enum Stickers: String {
     case smile
     

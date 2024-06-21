@@ -148,6 +148,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6F680B682C25BF6D00E3F15F /* Stickers */ = {
+			isa = PBXGroup;
+			children = (
+				A8BF66462C259F940005AE43 /* Stickers.swift */,
+			);
+			path = Stickers;
+			sourceTree = "<group>";
+		};
 		A80D265D2C23860B007A20CE /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -433,7 +441,7 @@
 		A8BF66452C259CC80005AE43 /* CustomizationView */ = {
 			isa = PBXGroup;
 			children = (
-				A8BF66462C259F940005AE43 /* Stickers.swift */,
+				6F680B682C25BF6D00E3F15F /* Stickers */,
 				A8BF66482C25A3ED0005AE43 /* CustomizationView.swift */,
 			);
 			path = CustomizationView;
