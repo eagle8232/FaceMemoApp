@@ -44,6 +44,8 @@
 		A8610C512C222E860042CACC /* StorageDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8610C502C222E860042CACC /* StorageDelegate.swift */; };
 		A8610C532C222ED20042CACC /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8610C522C222ED20042CACC /* HomeViewModel.swift */; };
 		A8610C562C22C6F60042CACC /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8610C552C22C6F60042CACC /* CustomTextField.swift */; };
+		A8BF66472C259F940005AE43 /* Stickers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BF66462C259F940005AE43 /* Stickers.swift */; };
+		A8BF66492C25A3ED0005AE43 /* CustomizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BF66482C25A3ED0005AE43 /* CustomizationView.swift */; };
 		A8C283542C20BEEA00506A5B /* DeepAR in Frameworks */ = {isa = PBXBuildFile; productRef = A8C283532C20BEEA00506A5B /* DeepAR */; };
 		A8C283572C20BF4300506A5B /* DeepARSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C283562C20BF4300506A5B /* DeepARSwiftUIView.swift */; };
 		A8C2836B2C20CE7400506A5B /* ray-ban-wayfarer.deepar in Resources */ = {isa = PBXBuildFile; fileRef = A8C2835B2C20CE7300506A5B /* ray-ban-wayfarer.deepar */; };
@@ -107,6 +109,8 @@
 		A8610C502C222E860042CACC /* StorageDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageDelegate.swift; sourceTree = "<group>"; };
 		A8610C522C222ED20042CACC /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		A8610C552C22C6F60042CACC /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		A8BF66462C259F940005AE43 /* Stickers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stickers.swift; sourceTree = "<group>"; };
+		A8BF66482C25A3ED0005AE43 /* CustomizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizationView.swift; sourceTree = "<group>"; };
 		A8C283562C20BF4300506A5B /* DeepARSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepARSwiftUIView.swift; sourceTree = "<group>"; };
 		A8C2835B2C20CE7300506A5B /* ray-ban-wayfarer.deepar */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ray-ban-wayfarer.deepar"; sourceTree = "<group>"; };
 		A8C2835C2C20CE7300506A5B /* Pixel_Hearts.deepar */ = {isa = PBXFileReference; lastKnownFileType = file; path = Pixel_Hearts.deepar; sourceTree = "<group>"; };
@@ -211,6 +215,7 @@
 		A82DAEF22C20864800E18665 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				A8C2835A2C20CE6300506A5B /* DeepAR Effects */,
 				A80D265D2C23860B007A20CE /* Networking */,
 				A82DAEE82C2083F600E18665 /* Persistence.swift */,
 				A82DAF042C208AD100E18665 /* Constants.swift */,
@@ -281,7 +286,6 @@
 		A82DAEFA2C20880C00E18665 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A8C2835A2C20CE6300506A5B /* DeepAR Effects */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -426,9 +430,19 @@
 			path = "Custom TextField";
 			sourceTree = "<group>";
 		};
+		A8BF66452C259CC80005AE43 /* CustomizationView */ = {
+			isa = PBXGroup;
+			children = (
+				A8BF66462C259F940005AE43 /* Stickers.swift */,
+				A8BF66482C25A3ED0005AE43 /* CustomizationView.swift */,
+			);
+			path = CustomizationView;
+			sourceTree = "<group>";
+		};
 		A8C283552C20BEFE00506A5B /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				A8BF66452C259CC80005AE43 /* CustomizationView */,
 				A8C283832C20DA0600506A5B /* UIKit -> SwiftUI */,
 				A82DAEFF2C20889300E18665 /* TabBar */,
 				A82DAF062C208EEB00E18665 /* CustomBlurView.swift */,
@@ -611,6 +625,7 @@
 				A84E30922C217CC4002F6E0A /* CameraView.swift in Sources */,
 				A80D266B2C238F65007A20CE /* MarketingRepository.swift in Sources */,
 				A80D26652C238851007A20CE /* EndPoint.swift in Sources */,
+				A8BF66472C259F940005AE43 /* Stickers.swift in Sources */,
 				A82DAEE22C2083F500E18665 /* ContentView.swift in Sources */,
 				A83009E62C240D3500589DA0 /* SettingsInfoView.swift in Sources */,
 				A8C2838B2C20E37C00506A5B /* EffectsListView.swift in Sources */,
@@ -636,6 +651,7 @@
 				A82DAF072C208EEB00E18665 /* CustomBlurView.swift in Sources */,
 				A82DAEE02C2083F500E18665 /* FaceMemoApp.swift in Sources */,
 				A82DAF052C208AD100E18665 /* Constants.swift in Sources */,
+				A8BF66492C25A3ED0005AE43 /* CustomizationView.swift in Sources */,
 				A8610C492C222A7C0042CACC /* RecentlyViewModel.swift in Sources */,
 				A80D266D2C239049007A20CE /* JSONConverter.swift in Sources */,
 				A83009DA2C23F74900589DA0 /* SettingsViewModel.swift in Sources */,
