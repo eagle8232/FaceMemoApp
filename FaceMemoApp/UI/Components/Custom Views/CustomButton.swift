@@ -8,8 +8,8 @@
 import SwiftUI
 
 enum ButtonStyle {
-    case rounded(String?, Image?)
-    case circled(String?, Image?)
+    case rounded(String?, Image?) // - Text or Image
+    case circled(String?, Image?) // - Text or Image
     case text(String)
 }
 
@@ -56,7 +56,8 @@ struct CustomButton: View {
                         .font(font)
                 }
             }
-            .padding(12)
+            .padding(8)
+            .padding(.horizontal, 4)
             .background {
                 CustomBlurView(style: blurStyle)
                     .clipShape(Capsule())
@@ -80,7 +81,7 @@ struct CustomButton: View {
                         .font(font)
                 }
             }
-            .padding(12)
+            .padding(8)
             .background {
                 CustomBlurView(style: blurStyle)
                     .clipShape(Circle())

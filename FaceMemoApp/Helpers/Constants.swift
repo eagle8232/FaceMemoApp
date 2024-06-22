@@ -31,4 +31,5 @@ class Constants {
     static let cornerRadius: CGFloat = 10
     static let iconSize: CGFloat = 35
     static let bottomPaddingSize: CGFloat = 32
+    static let stickerSize: CGFloat = 70
 }

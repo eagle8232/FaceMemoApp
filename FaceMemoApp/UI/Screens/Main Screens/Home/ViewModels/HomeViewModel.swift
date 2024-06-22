@@ -8,9 +8,8 @@
 import SwiftUI
 
 class HomeViewModel: ObservableObject, StorageDelegate {
-    
     @Published var images: [ImageModel] = []
-    
+    @Published var selectedImage: UIImage?
     init() {
         fetchImages()
     }

@@ -12,9 +12,9 @@ struct CameraView: View {
     @StateObject var cameraManager = CameraManager()
     @State var selectedEffect: DeepAREffect = DeepAREffect.allCases.first!
     @State var capturedImage: UIImage?
-    @State var showShareLink: Bool = false
     
     var saveToAlbum: (ImageModel?) -> Void
+    var customizeImage: (UIImage?) -> Void
     
     var body: some View {
         ZStack {
@@ -39,11 +39,15 @@ struct CameraView: View {
                         self.capturedImage = nil
                         
                     } submit: { // Submit Handler
+                        
                         let imageModel = ImageModel(name: "Image with '\(selectedEffect.name)' effect", imageData: capturedImage.jpegData(compressionQuality: 1) ?? Data(), date: Date())
                         saveToAlbum(imageModel)
                         
                         /// After saving the photo, we need to set nil to capturedImage
                         self.capturedImage = nil
+                        
+                    } customize: {
+                        customizeImage(capturedImage)
                     }
             }
         }

@@ -44,7 +44,6 @@
 		A8610C512C222E860042CACC /* StorageDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8610C502C222E860042CACC /* StorageDelegate.swift */; };
 		A8610C532C222ED20042CACC /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8610C522C222ED20042CACC /* HomeViewModel.swift */; };
 		A8610C562C22C6F60042CACC /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8610C552C22C6F60042CACC /* CustomTextField.swift */; };
-		A8BF66472C259F940005AE43 /* Stickers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BF66462C259F940005AE43 /* Stickers.swift */; };
 		A8BF66492C25A3ED0005AE43 /* CustomizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BF66482C25A3ED0005AE43 /* CustomizationView.swift */; };
 		A8BF671E2C25FB470005AE43 /* 1F9A1.svg in Resources */ = {isa = PBXBuildFile; fileRef = A8BF664B2C25FB460005AE43 /* 1F9A1.svg */; };
 		A8BF671F2C25FB470005AE43 /* 1F9A2.svg in Resources */ = {isa = PBXBuildFile; fileRef = A8BF664C2C25FB460005AE43 /* 1F9A2.svg */; };
@@ -252,6 +251,12 @@
 		A8BF67E92C25FB470005AE43 /* smirking_face.svg in Resources */ = {isa = PBXBuildFile; fileRef = A8BF671A2C25FB470005AE43 /* smirking_face.svg */; };
 		A8BF67EA2C25FB470005AE43 /* winking_face.svg in Resources */ = {isa = PBXBuildFile; fileRef = A8BF671B2C25FB470005AE43 /* winking_face.svg */; };
 		A8BF67EB2C25FB470005AE43 /* with_tears_of_joy_face.svg in Resources */ = {isa = PBXBuildFile; fileRef = A8BF671C2C25FB470005AE43 /* with_tears_of_joy_face.svg */; };
+		A8BF67EE2C26AC3B0005AE43 /* SVGKit in Frameworks */ = {isa = PBXBuildFile; productRef = A8BF67ED2C26AC3B0005AE43 /* SVGKit */; };
+		A8BF67F02C26AC3B0005AE43 /* SVGKitSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A8BF67EF2C26AC3B0005AE43 /* SVGKitSwift */; };
+		A8BF67F22C26B16A0005AE43 /* CustomizationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BF67F12C26B1690005AE43 /* CustomizationViewModel.swift */; };
+		A8BF67F52C26B2570005AE43 /* Sticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BF67F42C26B2570005AE43 /* Sticker.swift */; };
+		A8BF67F82C26B65F0005AE43 /* StickersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BF67F72C26B65F0005AE43 /* StickersView.swift */; };
+		A8BF67FE2C26EE410005AE43 /* CustomCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BF67FD2C26EE410005AE43 /* CustomCorner.swift */; };
 		A8C283542C20BEEA00506A5B /* DeepAR in Frameworks */ = {isa = PBXBuildFile; productRef = A8C283532C20BEEA00506A5B /* DeepAR */; };
 		A8C283572C20BF4300506A5B /* DeepARSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C283562C20BF4300506A5B /* DeepARSwiftUIView.swift */; };
 		A8C2836B2C20CE7400506A5B /* ray-ban-wayfarer.deepar in Resources */ = {isa = PBXBuildFile; fileRef = A8C2835B2C20CE7300506A5B /* ray-ban-wayfarer.deepar */; };
@@ -315,7 +320,6 @@
 		A8610C502C222E860042CACC /* StorageDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageDelegate.swift; sourceTree = "<group>"; };
 		A8610C522C222ED20042CACC /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		A8610C552C22C6F60042CACC /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
-		A8BF66462C259F940005AE43 /* Stickers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stickers.swift; sourceTree = "<group>"; };
 		A8BF66482C25A3ED0005AE43 /* CustomizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizationView.swift; sourceTree = "<group>"; };
 		A8BF664B2C25FB460005AE43 /* 1F9A1.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 1F9A1.svg; sourceTree = "<group>"; };
 		A8BF664C2C25FB460005AE43 /* 1F9A2.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 1F9A2.svg; sourceTree = "<group>"; };
@@ -523,6 +527,10 @@
 		A8BF671A2C25FB470005AE43 /* smirking_face.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = smirking_face.svg; sourceTree = "<group>"; };
 		A8BF671B2C25FB470005AE43 /* winking_face.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = winking_face.svg; sourceTree = "<group>"; };
 		A8BF671C2C25FB470005AE43 /* with_tears_of_joy_face.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = with_tears_of_joy_face.svg; sourceTree = "<group>"; };
+		A8BF67F12C26B1690005AE43 /* CustomizationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizationViewModel.swift; sourceTree = "<group>"; };
+		A8BF67F42C26B2570005AE43 /* Sticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sticker.swift; sourceTree = "<group>"; };
+		A8BF67F72C26B65F0005AE43 /* StickersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickersView.swift; sourceTree = "<group>"; };
+		A8BF67FD2C26EE410005AE43 /* CustomCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCorner.swift; sourceTree = "<group>"; };
 		A8C283562C20BF4300506A5B /* DeepARSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepARSwiftUIView.swift; sourceTree = "<group>"; };
 		A8C2835B2C20CE7300506A5B /* ray-ban-wayfarer.deepar */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ray-ban-wayfarer.deepar"; sourceTree = "<group>"; };
 		A8C2835C2C20CE7300506A5B /* Pixel_Hearts.deepar */ = {isa = PBXFileReference; lastKnownFileType = file; path = Pixel_Hearts.deepar; sourceTree = "<group>"; };
@@ -552,6 +560,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8BF67F02C26AC3B0005AE43 /* SVGKitSwift in Frameworks */,
+				A8BF67EE2C26AC3B0005AE43 /* SVGKit in Frameworks */,
 				A83009EB2C242D7800589DA0 /* SDWebImageSwiftUI in Frameworks */,
 				A8C283542C20BEEA00506A5B /* DeepAR in Frameworks */,
 			);
@@ -560,15 +570,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6F680B682C25BF6D00E3F15F /* Stickers */ = {
-			isa = PBXGroup;
-			children = (
-				A8BF664A2C25FB2E0005AE43 /* Pack of Stickers */,
-				A8BF66462C259F940005AE43 /* Stickers.swift */,
-			);
-			path = Stickers;
-			sourceTree = "<group>";
-		};
 		A80D265D2C23860B007A20CE /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -636,6 +637,7 @@
 		A82DAEF22C20864800E18665 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				A8BF664A2C25FB2E0005AE43 /* Pack of Stickers */,
 				A8C2835A2C20CE6300506A5B /* DeepAR Effects */,
 				A80D265D2C23860B007A20CE /* Networking */,
 				A82DAEE82C2083F600E18665 /* Persistence.swift */,
@@ -669,9 +671,8 @@
 		A82DAEF52C20866D00E18665 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				A83009D52C23F71600589DA0 /* Settings */,
-				A8610C382C21F5980042CACC /* Recently */,
-				A82DAEF72C20868200E18665 /* Home */,
+				A8BF67F32C26B2310005AE43 /* Main Screens */,
+				A8BF66452C259CC80005AE43 /* CustomizationView */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -854,8 +855,9 @@
 		A8BF66452C259CC80005AE43 /* CustomizationView */ = {
 			isa = PBXGroup;
 			children = (
-				6F680B682C25BF6D00E3F15F /* Stickers */,
-				A8BF66482C25A3ED0005AE43 /* CustomizationView.swift */,
+				A8BF67FB2C26E5DA0005AE43 /* Views */,
+				A8BF67FA2C26E5D30005AE43 /* ViewModels */,
+				A8BF67F92C26E5CE0005AE43 /* Models */,
 			);
 			path = CustomizationView;
 			sourceTree = "<group>";
@@ -1113,15 +1115,66 @@
 			path = face;
 			sourceTree = "<group>";
 		};
-		A8C283552C20BEFE00506A5B /* Components */ = {
+		A8BF67F32C26B2310005AE43 /* Main Screens */ = {
 			isa = PBXGroup;
 			children = (
-				A8BF66452C259CC80005AE43 /* CustomizationView */,
-				A8C283832C20DA0600506A5B /* UIKit -> SwiftUI */,
-				A82DAEFF2C20889300E18665 /* TabBar */,
+				A83009D52C23F71600589DA0 /* Settings */,
+				A8610C382C21F5980042CACC /* Recently */,
+				A82DAEF72C20868200E18665 /* Home */,
+			);
+			path = "Main Screens";
+			sourceTree = "<group>";
+		};
+		A8BF67F62C26B5320005AE43 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
 				A82DAF062C208EEB00E18665 /* CustomBlurView.swift */,
 				A8610C3C2C21F7CC0042CACC /* CustomAlertView.swift */,
 				A8610C3E2C21F9AA0042CACC /* CustomButton.swift */,
+				A8BF67FD2C26EE410005AE43 /* CustomCorner.swift */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		A8BF67F92C26E5CE0005AE43 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A8BF67F42C26B2570005AE43 /* Sticker.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A8BF67FA2C26E5D30005AE43 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				A8BF67F12C26B1690005AE43 /* CustomizationViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A8BF67FB2C26E5DA0005AE43 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A8BF67FC2C26E5E30005AE43 /* Components */,
+				A8BF66482C25A3ED0005AE43 /* CustomizationView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A8BF67FC2C26E5E30005AE43 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				A8BF67F72C26B65F0005AE43 /* StickersView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		A8C283552C20BEFE00506A5B /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				A8BF67F62C26B5320005AE43 /* Custom Views */,
+				A8C283832C20DA0600506A5B /* UIKit -> SwiftUI */,
+				A82DAEFF2C20889300E18665 /* TabBar */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -1212,6 +1265,8 @@
 			packageProductDependencies = (
 				A8C283532C20BEEA00506A5B /* DeepAR */,
 				A83009EA2C242D7800589DA0 /* SDWebImageSwiftUI */,
+				A8BF67ED2C26AC3B0005AE43 /* SVGKit */,
+				A8BF67EF2C26AC3B0005AE43 /* SVGKitSwift */,
 			);
 			productName = FaceMemoApp;
 			productReference = A82DAEDC2C2083F500E18665 /* FaceMemoApp.app */;
@@ -1244,6 +1299,7 @@
 			packageReferences = (
 				A8C283522C20BEEA00506A5B /* XCRemoteSwiftPackageReference "swift-deepar" */,
 				A83009E92C242D7800589DA0 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+				A8BF67EC2C26AC3B0005AE43 /* XCRemoteSwiftPackageReference "SVGKit" */,
 			);
 			productRefGroup = A82DAEDD2C2083F500E18665 /* Products */;
 			projectDirPath = "";
@@ -1505,7 +1561,7 @@
 				A84E30922C217CC4002F6E0A /* CameraView.swift in Sources */,
 				A80D266B2C238F65007A20CE /* MarketingRepository.swift in Sources */,
 				A80D26652C238851007A20CE /* EndPoint.swift in Sources */,
-				A8BF66472C259F940005AE43 /* Stickers.swift in Sources */,
+				A8BF67F22C26B16A0005AE43 /* CustomizationViewModel.swift in Sources */,
 				A82DAEE22C2083F500E18665 /* ContentView.swift in Sources */,
 				A83009E62C240D3500589DA0 /* SettingsInfoView.swift in Sources */,
 				A8C2838B2C20E37C00506A5B /* EffectsListView.swift in Sources */,
@@ -1514,13 +1570,16 @@
 				A8610C532C222ED20042CACC /* HomeViewModel.swift in Sources */,
 				A8C2837D2C20CEA400506A5B /* DeepAREffect.swift in Sources */,
 				A8610C472C2228590042CACC /* ImageModel.swift in Sources */,
+				A8BF67FE2C26EE410005AE43 /* CustomCorner.swift in Sources */,
 				A80D26632C23879E007A20CE /* Model.swift in Sources */,
 				A83009DE2C23F75E00589DA0 /* SettingsModel.swift in Sources */,
 				A8610C4D2C222BD60042CACC /* ImageCellView.swift in Sources */,
+				A8BF67F82C26B65F0005AE43 /* StickersView.swift in Sources */,
 				A84E30942C21907E002F6E0A /* CameraManager.swift in Sources */,
 				A8610C512C222E860042CACC /* StorageDelegate.swift in Sources */,
 				A8C283572C20BF4300506A5B /* DeepARSwiftUIView.swift in Sources */,
 				A83009E82C240FBF00589DA0 /* AboutUsView.swift in Sources */,
+				A8BF67F52C26B2570005AE43 /* Sticker.swift in Sources */,
 				A82DAEEC2C2083F600E18665 /* FaceMemoApp.xcdatamodeld in Sources */,
 				A80D26682C23886C007A20CE /* EndPointProtocol.swift in Sources */,
 				A82DAEFD2C20881800E18665 /* HomeView.swift in Sources */,
@@ -1768,6 +1827,14 @@
 				minimumVersion = 3.0.4;
 			};
 		};
+		A8BF67EC2C26AC3B0005AE43 /* XCRemoteSwiftPackageReference "SVGKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SVGKit/SVGKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 		A8C283522C20BEEA00506A5B /* XCRemoteSwiftPackageReference "swift-deepar" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/DeepARSDK/swift-deepar";
@@ -1783,6 +1850,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A83009E92C242D7800589DA0 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
 			productName = SDWebImageSwiftUI;
+		};
+		A8BF67ED2C26AC3B0005AE43 /* SVGKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A8BF67EC2C26AC3B0005AE43 /* XCRemoteSwiftPackageReference "SVGKit" */;
+			productName = SVGKit;
+		};
+		A8BF67EF2C26AC3B0005AE43 /* SVGKitSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A8BF67EC2C26AC3B0005AE43 /* XCRemoteSwiftPackageReference "SVGKit" */;
+			productName = SVGKitSwift;
 		};
 		A8C283532C20BEEA00506A5B /* DeepAR */ = {
 			isa = XCSwiftPackageProductDependency;

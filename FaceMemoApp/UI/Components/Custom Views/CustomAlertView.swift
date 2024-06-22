@@ -26,6 +26,7 @@ struct CustomAlertView: View {
     let dismiss: () -> Void
     var submit: (() -> Void)?
     var submitText: ((String) -> Void)?
+    var customize: (() -> Void)?
     
     var body: some View {
         ZStack {
@@ -81,7 +82,6 @@ struct CustomAlertView: View {
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 250, height: 250)
                 }
-                
             case .none:
                 ZStack {} /// - Show nothing
             }
@@ -97,26 +97,45 @@ struct CustomAlertView: View {
         .padding()
     }
     
+    // MARK: - Buttons View
+    
     var buttonsView: some View {
-        HStack {
-            // Cancel Button
-            CustomButton(style: .rounded("Cancel", nil)) {
-                dismiss()
+        HStack(spacing: 8) {
+            cancelButtonView
+            if alertType == .saveImage {
+                customizeButtonView
             }
-            .foregroundStyle(.white)
-            
-            // Submit Button (If needed)
             if alertType != .none {
-                CustomButton(style: .rounded("Submit", nil), blurStyle: .extraLight) {
-                    if alertType == .saveDescription {
-                        submitText?(descriptionText)
-                    } else {
-                        submit?()
-                    }
-                }
-                .foregroundStyle(.gray)
+                submitButtonView
             }
-            
         }
+    }
+    
+    var cancelButtonView: some View {
+        // Cancel Button
+        CustomButton(style: .rounded("Cancel", nil)) {
+            dismiss()
+        }
+        .foregroundStyle(.white)
+    }
+    
+    var submitButtonView: some View {
+        // Submit Button (If needed)
+        CustomButton(style: .rounded("Submit", nil), blurStyle: .dark) {
+            if alertType == .saveDescription {
+                submitText?(descriptionText)
+            } else {
+                submit?()
+            }
+        }
+        .foregroundStyle(.green)
+    }
+    
+    var customizeButtonView: some View {
+        // Customize Button (If needed)
+        CustomButton(style: .rounded("Customize", nil), blurStyle: .dark) {
+            customize?()
+        }
+        .foregroundStyle(LinearGradient(colors: [.purple, .cyan, .mint], startPoint: .leading, endPoint: .trailing))
     }
 }
