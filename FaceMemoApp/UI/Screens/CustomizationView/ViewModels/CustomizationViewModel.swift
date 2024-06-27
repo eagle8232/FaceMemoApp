@@ -35,8 +35,7 @@ class CustomizationViewModel: ObservableObject {
                     if let svgImage = SVGKImage(data: data) {
                         print("SVG image loaded successfully")
                         svgImage.size = CGSize(width: Constants.stickerSize, height: Constants.stickerSize)
-                        let image = Image(uiImage: svgImage.uiImage)
-                        let sticker = Sticker(name: item, image: image)
+                        let sticker = Sticker(name: item, image: svgImage.uiImage)
                         
                         DispatchQueue.main.async { [ weak self ] in
                             self?.stickers.append(sticker)

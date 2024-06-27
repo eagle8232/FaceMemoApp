@@ -19,9 +19,7 @@ struct AboutUsView: View {
     var body: some View {
         ZStack(alignment: .topTrailing) {
             contentView
-            CustomButton(style: .circled(nil, Image(systemName: "xmark")), size: 10) {
-                isPresentingAboutUs = false
-            }
+            cancelButtonView
             
         }
         .padding()
@@ -50,5 +48,13 @@ struct AboutUsView: View {
                 .padding(.vertical, 8)
         }
         .multilineTextAlignment(.center)
+    }
+    
+    var cancelButtonView: some View {
+        // Cancel Button
+        CustomButton(style: .circled(nil, Image(systemName: "xmark"))) {
+            isPresentingAboutUs = false
+        }
+        .foregroundStyle(.white)
     }
 }

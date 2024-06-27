@@ -8,28 +8,50 @@
 import SwiftUI
 
 struct HomeView: View {
-    @StateObject var homeVM: HomeViewModel = HomeViewModel()
+    @EnvironmentObject var storageVM: StorageViewModel
     @State var showCustomizationView: Bool = false
     
     var body: some View {
-        
-        CameraView { imageModel in
-            guard let imageModel else { return }
-            homeVM.images.append(imageModel)
-            homeVM.saveImages()
-        } customizeImage: { uiImage in
-            homeVM.selectedImage = uiImage
-            showCustomizationView = true
-        }
-        
-        .background {
-            NavigationLink(isActive: $showCustomizationView) {
-                if let selectedImage = homeVM.selectedImage {
-                    CustomizationView(selectedImage: selectedImage)
-                }
-            } label: {}
-        }
+        contentView
+            .background {
+                NavigationLink(isActive: $showCustomizationView) {
+                    CustomizationView(customizedImage: $storageVM.capturedImage) { imageModel in
+                        guard let imageModel else { return }
+                        storageVM.imageModels.append(imageModel)
+                        storageVM.saveImages()
+                    }
+                } label: {}
+            }
     }
     
+    var contentView: some View {
+        ZStack {
+            CameraView(selectedEffect: $storageVM.selectedEffect, capturedImage: $storageVM.capturedImage)
+            
+            if let capturedImage = storageVM.capturedImage {
+                CustomAlertView(
+                    title: "Captured Photo",
+                    message: "Do you want to save this photo to your album?",
+                    alertType: .saveImage,
+                    image: Image(uiImage: capturedImage)) {
+                        
+                        /// After dismissing alert view, we need to set nil to capturedImage
+                        storageVM.capturedImage = nil
+                        
+                    } submit: { // Submit Handler
+                        
+                        let imageModel = ImageModel(name: "Image with '\(storageVM.selectedEffect.name)' effect", imageData: capturedImage.jpegData(compressionQuality: 1) ?? Data(), date: Date())
+                        storageVM.imageModels.append(imageModel)
+                        storageVM.saveImages()
+                        
+                        /// After saving the photo, we need to set nil to capturedImage
+                        storageVM.capturedImage = nil
+                        
+                    } customize: {
+                        showCustomizationView = true
+                    }
+            }
+        }
+    }
 }
 

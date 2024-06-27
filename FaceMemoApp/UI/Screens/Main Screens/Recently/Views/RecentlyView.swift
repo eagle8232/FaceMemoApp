@@ -10,7 +10,7 @@ import SwiftUI
 import _AVKit_SwiftUI
 
 struct RecentlyView: View {
-    @StateObject var recentrlyVM: RecentlyViewModel = RecentlyViewModel()
+    @EnvironmentObject var storageVM: StorageViewModel
     @State var currentDescriptionText: String = ""
     @State var selectedImageModel: ImageModel?
     
@@ -22,9 +22,6 @@ struct RecentlyView: View {
             contentView
             alertView
             deleteButtonView
-        }
-        .onAppear {
-            recentrlyVM.fetchImages()
         }
     }
     
@@ -47,11 +44,11 @@ struct RecentlyView: View {
             .padding()
             
             // List View
-            ImagesListView(isEditing: $isEditing, selectedImageModels: $selectedImageModels, imageModels: recentrlyVM.imageModels) { imageModel in
+            ImagesListView(isEditing: $isEditing, selectedImageModels: $selectedImageModels, imageModels: storageVM.imageModels) { imageModel in
                 self.selectedImageModel = imageModel
             } deleteImageModel: { imageModel in
                 withAnimation {
-                    recentrlyVM.deleteImageModelAt(imageModel)
+                    storageVM.deleteImageModelAt(imageModel)
                 }
             }
         }
@@ -63,7 +60,7 @@ struct RecentlyView: View {
                 CustomAlertView(title: "Description", message: "Create a memorable description for this picture", alertType: .saveDescription, descriptionText: selectedImageModel.description ?? "") {
                     self.selectedImageModel = nil
                 } submitText: { text in
-                    recentrlyVM.saveDescription(for: selectedImageModel, text: text)
+                    storageVM.saveDescription(for: selectedImageModel, text: text)
                     self.selectedImageModel = nil /// - After saving it, we need to set it to nil
                 }
             }
@@ -74,8 +71,8 @@ struct RecentlyView: View {
         VStack(alignment: .trailing) {
             if isEditing {
                 Spacer()
-                CustomButton(style: .rounded(nil, Image(systemName: "trash")), size: 30) {
-                    recentrlyVM.deleteSelectedImageModels(selectedImageModels)
+                CustomButton(style: .circled(nil, Image(systemName: "trash")), size: 30) {
+                    storageVM.deleteSelectedImageModels(selectedImageModels)
                     withAnimation {
                         isEditing = false /// - After deleting image models, set 'isEditing' to false, as it is better for UX
                     }

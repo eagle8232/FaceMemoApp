@@ -10,8 +10,8 @@ import SwiftUI
 struct StickersView: View {
     let stickers: [Sticker]
     @Binding var selectedStickers: [Sticker]
-    
-    // Stickers View Properties
+    @Binding var isPresentingStickers: Bool
+    let didSelect: () -> Void
     
     @State var offset: CGFloat = 0
     @State var lastOffset: CGFloat = 0
@@ -25,43 +25,44 @@ struct StickersView: View {
     
     var body: some View {
         GeometryReader { proxy in
-            
             let height = proxy.size.height
+            let visibleSize = Constants.stickerSize * 3
             
-            contentView
-                .offset(y: height - Constants.stickerSize * 2)
-                .offset(y: -offset > 0 ? (-offset <= (height - 100) ? offset : -(height - 100)) : 0)
-                .gesture(
-                    DragGesture()
-                        .updating($gestureOffset) { value, out, _ in
-                            out = value.translation.height
-                            onChange()
-                        }
-                        .onEnded({ value in
-                            let maxHeight = height - 100
-                            
-                            withAnimation {
-                                // Drag Logic
-                                
-                                //  Drag to Mid
-                                if -offset > 100 && offset < maxHeight / 2 {
-                                    offset = -(maxHeight / 3)
-                                } else if -offset > maxHeight / 2 {
-                                    offset = -maxHeight
-                                } else {
-                                    offset = 0
-                                }
-                                
-                                /// Storing last offset, so gesture can continue from last position
-                                lastOffset = offset
+            VStack {
+                Spacer()
+                
+                contentView(height: height, visibleSize: visibleSize)
+                    .offset(y: height - visibleSize)
+                    .offset(y: -offset > 0 ? (-offset <= (height - visibleSize) ? offset : -(height - visibleSize)) : 0)
+                    .gesture(
+                        DragGesture()
+                            .updating($gestureOffset) { value, out, _ in
+                                out = value.translation.height
+                                onChange()
                             }
-                        })
-                )
+                            .onEnded({ value in
+                                let maxHeight = height - visibleSize
+                                
+                                withAnimation {
+                                    if -offset > visibleSize && offset < maxHeight {
+                                        offset = -(maxHeight / 2.5)
+                                    } else if -offset > maxHeight / 2 {
+                                        offset = -maxHeight
+                                    } else {
+                                        offset = 0
+                                    }
+                                    
+                                    lastOffset = offset
+                                }
+                            })
+                    )
+            }
         }
+        .edgesIgnoringSafeArea(.all)
     }
     
-    var contentView: some View {
-        ZStack {
+    func contentView(height: CGFloat, visibleSize: CGFloat) -> some View {
+        ZStack(alignment: .topTrailing) {
             CustomBlurView(style: .dark)
                 .ignoresSafeArea()
             
@@ -69,27 +70,38 @@ struct StickersView: View {
                 Capsule()
                     .frame(width: 80, height: 4)
                     .padding(16)
-                
                 ScrollView(.vertical) {
                     LazyVGrid(columns: columns) {
-                        /// - We can use ForEach loop without 'id: \.name' because Sticker Model is Identifiable, but we want to see stickers by their names
                         ForEach(stickers, id: \.name) { sticker in
-                            sticker.image
+                            Image(uiImage: sticker.image)
                                 .onTapGesture {
                                     selectedStickers.append(sticker)
+                                    didSelect()
                                 }
                         }
                     }
+                    .padding(.bottom, 20)
                 }
+                .padding(.bottom, height - visibleSize - (-offset))
             }
+            
+            dismissButtonView
+                .padding(8)
         }
         .clipShape(CustomCorner(corners: [.topLeft, .topRight], radius: Constants.cornerRadius))
     }
     
+    var dismissButtonView: some View {
+        CustomButton(style: .circled(nil, Image(systemName: "xmark")), size: 12) {
+            isPresentingStickers = false
+        }
+    }
+    
     func onChange() {
-        DispatchQueue.main.async {
-            self.offset = gestureOffset + lastOffset
+            DispatchQueue.main.async {
+                withAnimation {
+                self.offset = gestureOffset + lastOffset
+            }
         }
     }
 }
-

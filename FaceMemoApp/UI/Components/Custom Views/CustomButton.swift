@@ -18,7 +18,7 @@ struct CustomButton: View {
     var style: ButtonStyle = .circled(nil, nil)
     var font: Font = .system(size: 15, weight: .medium)
     var blurStyle: UIBlurEffect.Style = .light
-    var size: CGFloat = 15
+    var size: CGFloat = 16
     
     // - Functionality
     let handler: () -> Void
@@ -38,11 +38,13 @@ struct CustomButton: View {
                 textButtonView(title)
             }
         }
+        .foregroundStyle(.white) // White by Default
     }
     
     func roundedButtonView(_ title: String?, _ image: Image?) -> some View {
         Button {
             handler()
+            vibrate()
         } label: {
             VStack {
                 if let image {
@@ -68,6 +70,7 @@ struct CustomButton: View {
     func circledButtonView(_ title: String?, _ image: Image?) -> some View {
         Button {
             handler()
+            vibrate()
         } label: {
             VStack {
                 if let image {
@@ -81,7 +84,7 @@ struct CustomButton: View {
                         .font(font)
                 }
             }
-            .padding(8)
+            .padding(size/1.5)
             .background {
                 CustomBlurView(style: blurStyle)
                     .clipShape(Circle())
@@ -92,11 +95,15 @@ struct CustomButton: View {
     func textButtonView(_ title: String) -> some View {
         Button {
             handler()
+            vibrate()
         } label: {
             Text(title)
                 .font(font)
         }
     }
     
-    
+    func vibrate() {
+        let generator = UIImpactFeedbackGenerator(style: .soft)
+        generator.impactOccurred()
+    }
 }

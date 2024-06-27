@@ -28,7 +28,7 @@ class Constants {
     
     // MARK: - All CGFloaf Values
     
-    static let cornerRadius: CGFloat = 10
+    static let cornerRadius: CGFloat = 15
     static let iconSize: CGFloat = 35
     static let bottomPaddingSize: CGFloat = 32
     static let stickerSize: CGFloat = 70

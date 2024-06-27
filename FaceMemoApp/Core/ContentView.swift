@@ -9,6 +9,7 @@ import SwiftUI
 import SDWebImageSwiftUI
 
 struct ContentView: View {
+    var storageVM: StorageViewModel = StorageViewModel()
     @State var currentTab: Tabs = .home
     
     init() {
@@ -39,6 +40,7 @@ struct ContentView: View {
             
             tabBarView
         }
+        .environmentObject(storageVM)
     }
     
     var tabBarView: some View {

@@ -1,22 +1,30 @@
 //
-//  RecentlyViewModel.swift
+//  StorageViewModel.swift
 //  FaceMemoApp
 //
-//  Created by Vusal Nuriyev 2 on 19.06.24.
+//  Created by Vusal Nuriyev 2 on 23.06.24.
 //
 
 import SwiftUI
 
-class RecentlyViewModel: ObservableObject {
-    
+class StorageViewModel: ObservableObject {
     @Published var imageModels: [ImageModel] = []
+    
+    @Published var capturedImage: UIImage?
+    @Published var selectedImage: UIImage?
+    @Published var selectedEffect: DeepAREffect = DeepAREffect.allCases.first!
+    
     
     private let storageManager: StorageManager = StorageManager()
     
-    // - Public Functions
+    init() {
+        fetchImages()
+    }
     
+    // - Public Functions
     public func fetchImages() {
-        storageManager.fetchData(as: imageModels) { result in
+        storageManager.fetchData(as: imageModels) { [ weak self ] result in
+            guard let self else { return }
             switch result {
             case .success(let imageModels):
                 DispatchQueue.main.async {
@@ -26,6 +34,15 @@ class RecentlyViewModel: ObservableObject {
                 print(error)
             }
         }
+    }
+    
+    public func saveImages() {
+        /// - Store to photo album
+        guard let lastSavedImageData = imageModels.last?.imageData,
+              let capturedPhoto = UIImage(data: lastSavedImageData)
+        else { return }
+        saveData()
+        UIImageWriteToSavedPhotosAlbum(capturedPhoto, nil, nil, nil)
     }
     
     public func deleteImageModelAt(_ imageModel: ImageModel) {
