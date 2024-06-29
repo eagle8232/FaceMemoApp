@@ -260,6 +260,7 @@
 		A8BF68072C27B2820005AE43 /* PinchModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BF68062C27B2820005AE43 /* PinchModifier.swift */; };
 		A8BF68092C27B6F90005AE43 /* RotationModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BF68082C27B6F90005AE43 /* RotationModifier.swift */; };
 		A8BF680B2C28074C0005AE43 /* StorageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BF680A2C28074C0005AE43 /* StorageViewModel.swift */; };
+		A8BF68182C2FCDE80005AE43 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BF68172C2FCDE80005AE43 /* HomeViewModel.swift */; };
 		A8C283542C20BEEA00506A5B /* DeepAR in Frameworks */ = {isa = PBXBuildFile; productRef = A8C283532C20BEEA00506A5B /* DeepAR */; };
 		A8C283572C20BF4300506A5B /* DeepARSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C283562C20BF4300506A5B /* DeepARSwiftUIView.swift */; };
 		A8C2836B2C20CE7400506A5B /* ray-ban-wayfarer.deepar in Resources */ = {isa = PBXBuildFile; fileRef = A8C2835B2C20CE7300506A5B /* ray-ban-wayfarer.deepar */; };
@@ -537,6 +538,7 @@
 		A8BF68062C27B2820005AE43 /* PinchModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinchModifier.swift; sourceTree = "<group>"; };
 		A8BF68082C27B6F90005AE43 /* RotationModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationModifier.swift; sourceTree = "<group>"; };
 		A8BF680A2C28074C0005AE43 /* StorageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageViewModel.swift; sourceTree = "<group>"; };
+		A8BF68172C2FCDE80005AE43 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		A8C283562C20BF4300506A5B /* DeepARSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepARSwiftUIView.swift; sourceTree = "<group>"; };
 		A8C2835B2C20CE7300506A5B /* ray-ban-wayfarer.deepar */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ray-ban-wayfarer.deepar"; sourceTree = "<group>"; };
 		A8C2835C2C20CE7300506A5B /* Pixel_Hearts.deepar */ = {isa = PBXFileReference; lastKnownFileType = file; path = Pixel_Hearts.deepar; sourceTree = "<group>"; };
@@ -706,6 +708,7 @@
 		A82DAEF92C20880700E18665 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				A8BF68172C2FCDE80005AE43 /* HomeViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -1589,6 +1592,7 @@
 				A83009DC2C23F74F00589DA0 /* SettingsView.swift in Sources */,
 				A8C2837D2C20CEA400506A5B /* DeepAREffect.swift in Sources */,
 				A8610C472C2228590042CACC /* ImageModel.swift in Sources */,
+				A8BF68182C2FCDE80005AE43 /* HomeViewModel.swift in Sources */,
 				A8BF67FE2C26EE410005AE43 /* CustomCorner.swift in Sources */,
 				A80D26632C23879E007A20CE /* Model.swift in Sources */,
 				A83009DE2C23F75E00589DA0 /* SettingsModel.swift in Sources */,

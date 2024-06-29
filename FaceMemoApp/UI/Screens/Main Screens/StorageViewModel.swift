@@ -8,12 +8,8 @@
 import SwiftUI
 
 class StorageViewModel: ObservableObject {
+    
     @Published var imageModels: [ImageModel] = []
-    
-    @Published var capturedImage: UIImage?
-    @Published var selectedImage: UIImage?
-    @Published var selectedEffect: DeepAREffect = DeepAREffect.allCases.first!
-    
     
     private let storageManager: StorageManager = StorageManager()
     

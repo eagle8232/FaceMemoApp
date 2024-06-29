@@ -14,7 +14,11 @@ import SwiftUI
  */
 
 class CustomizationViewModel: ObservableObject {
+    
     @Published var stickers: [Sticker] = []
+    @Published var isPresentingStickers: Bool = false
+    @Published var selectedStickers: [Sticker] = []
+    @Published private var defaultImage: UIImage? /// - Use this to set defaultImage to 'customizedImage' if needed
     
     let fileManager: FileManager = FileManager.default
     let path = Bundle.main.bundlePath

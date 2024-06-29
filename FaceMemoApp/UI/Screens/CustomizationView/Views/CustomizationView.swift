@@ -9,14 +9,20 @@ import SwiftUI
 
 struct CustomizationView: View {
     @Environment(\.dismiss) var dismiss
-    @StateObject var customizationVM: CustomizationViewModel = CustomizationViewModel()
+    @StateObject var vm: CustomizationViewModel = CustomizationViewModel()
     
-    @Binding var customizedImage: UIImage? /// - Use UIImage for a customization
-    let completion: (ImageModel?) -> Void /// - ImageModel with customized 'customizedImage'
+    @Binding var imageToCustomize: UIImage /// - Use UIImage for a customization
+    /// - Set a default image by a new captured image, so users can reset customized image
+    var defaultImage: UIImage?
+    let completion: (UIImage) -> Void /// - ImageModel with customized image
     
-    @State var isPresentingStickers: Bool = false
-    @State var selectedStickers: [Sticker] = []
-    @State private var defaultImage: UIImage? /// - Use this to set defaultImage to 'customizedImage' if needed
+    init(customize image: Binding<UIImage>, completion: @escaping (UIImage) -> Void) {
+        self._imageToCustomize = image
+        self.completion = completion
+        
+        /// - Set default, so users can reset customized image, if they don't like it
+        self.defaultImage = self.imageToCustomize
+    }
     
     var body: some View {
         contentView
@@ -25,9 +31,6 @@ struct CustomizationView: View {
                     cancelButtonView
                 }
             })
-            .onAppear {
-                self.defaultImage = customizedImage /// - We set a default image with 'customizedImage', as we know that customizedImage is a new captured image
-            }
             .navigationBarBackButtonHidden()
     }
     
@@ -37,7 +40,7 @@ struct CustomizationView: View {
         ZStack(alignment: .bottomTrailing) {
             customizedImageView
             stickersView
-            if !isPresentingStickers {
+            if !vm.isPresentingStickers {
                 actionButtonsView
             }
         }
@@ -46,15 +49,15 @@ struct CustomizationView: View {
     
     var customizedImageView: some View {
         ZStack {
-            ImageCustomizerView(selectedImage: $customizedImage, selectedStickers: selectedStickers)
+            ImageCustomizerView(selectedImage: $imageToCustomize, selectedStickers: vm.selectedStickers)
         }
     }
     
     var stickersView: some View {
         ZStack {
-            if isPresentingStickers {
-                StickersView(stickers: customizationVM.stickers, selectedStickers: $selectedStickers , isPresentingStickers: $isPresentingStickers) {
-                    isPresentingStickers = false
+            if vm.isPresentingStickers {
+                StickersView(stickers: vm.stickers, selectedStickers: $vm.selectedStickers , isPresentingStickers: $vm.isPresentingStickers) {
+                    vm.isPresentingStickers = false
                 }
                 .ignoresSafeArea(.all, edges: .bottom)
             }
@@ -73,8 +76,9 @@ struct CustomizationView: View {
     // Cancel Button
     var cancelButtonView: some View {
         CustomButton(style: .circled(nil, Image(systemName: "xmark")), size: 15) {
-            // As we cancel customization of the selected image, we dismiss view
-            self.customizedImage = defaultImage
+            /// As we cancel customization of the selected image, we dismiss view
+            /// It is safe to force unwrap it, as we already set a value to 'defaultImage'
+            imageToCustomize = defaultImage!
             dismiss()
         }
     }
@@ -82,7 +86,8 @@ struct CustomizationView: View {
     // Save Button
     var saveButtonView: some View {
         CustomButton(style: .circled(nil, Image(systemName: "checkmark")), size: 25) {
-            // After saving customization of the selected image, we dismiss view
+            completion(imageToCustomize)
+            /// After saving customization of the selected image, we dismiss view
             dismiss()
         }
     }
@@ -90,7 +95,7 @@ struct CustomizationView: View {
     // Show Stickers Button View
     var showStickersButtonView: some View {
         CustomButton(style: .circled(nil, Image(.sticker)), size: 25) {
-            isPresentingStickers = true
+            vm.isPresentingStickers = true
         }
         .padding()
     }

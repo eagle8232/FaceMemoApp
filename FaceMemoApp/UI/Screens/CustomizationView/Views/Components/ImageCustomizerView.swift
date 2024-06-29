@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ImageCustomizerView: View {
-    @Binding var selectedImage: UIImage?
+    @Binding var selectedImage: UIImage
     var selectedStickers: [Sticker]
     
     /// - Drag, rotate and scale properties
@@ -24,31 +24,31 @@ struct ImageCustomizerView: View {
     
     var contentView: some View {
         ZStack {
-            if let selectedImage {
-                Image(uiImage: selectedImage)
-                    .resizable()
-                
-                
-                ForEach(selectedStickers) { sticker in
-                    Image(uiImage: sticker.image)
-                        .draggableView { location in
-                            self.location = location
-                        }
-                        .pinchView { scaleSize in
-                            self.scaleSize = scaleSize
-                        }
-                        .onAppear {
-                            imageByCombiningImage(firstImage: selectedImage, withImage: sticker.image, at: location, scale: scaleSize, angle: angle)
-                        }
-                        .onChange(of: location) { newValue in
-                            imageByCombiningImage(firstImage: selectedImage, withImage: sticker.image, at: location, scale: scaleSize, angle: angle)
-                        }
-                        .onChange(of: scaleSize) { newValue in
-                            imageByCombiningImage(firstImage: selectedImage, withImage: sticker.image, at: location, scale: scaleSize, angle: angle)
-                        }
-                }
+            
+            Image(uiImage: selectedImage)
+                .resizable()
+            
+            
+            ForEach(selectedStickers) { sticker in
+                Image(uiImage: sticker.image)
+                    .draggableView { location in
+                        self.location = location
+                    }
+                    .pinchView { scaleSize in
+                        self.scaleSize = scaleSize
+                    }
+                    .onAppear {
+                        imageByCombiningImage(firstImage: selectedImage, withImage: sticker.image, at: location, scale: scaleSize, angle: angle)
+                    }
+                    .onChange(of: location) { newValue in
+                        imageByCombiningImage(firstImage: selectedImage, withImage: sticker.image, at: location, scale: scaleSize, angle: angle)
+                    }
+                    .onChange(of: scaleSize) { newValue in
+                        imageByCombiningImage(firstImage: selectedImage, withImage: sticker.image, at: location, scale: scaleSize, angle: angle)
+                    }
             }
         }
+        
     }
     
     func imageByCombiningImage(firstImage: UIImage, withImage secondImage: UIImage, at location: CGPoint, scale: CGFloat, angle: Angle) {
