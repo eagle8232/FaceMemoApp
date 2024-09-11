@@ -17,15 +17,18 @@ class StorageManager: ObservableObject {
     }
     
     public func fetchData<T: Codable>(as value: T, completion: @escaping ((Result<T, Error>) -> Void)) {
-        do {
-            if fileManager.fileExists(atPath: imagesDataFileURL.path()) {
-                let encodedData = try Data(contentsOf: imagesDataFileURL)
-                let decodedData = try JSONDecoder().decode(T.self, from: encodedData)
-                print(decodedData)
-                completion(.success(decodedData))
+        DispatchQueue.global(qos: .background).async { [ weak self ] in
+            guard let self else { return }
+            do {
+                if fileManager.fileExists(atPath: self.imagesDataFileURL.path()) {
+                    let encodedData = try Data(contentsOf: self.imagesDataFileURL)
+                    let decodedData = try JSONDecoder().decode(T.self, from: encodedData)
+                    print(decodedData)
+                    completion(.success(decodedData))
+                }
+            } catch {
+                completion(.failure(error))
             }
-        } catch {
-            completion(.failure(error))
         }
     }
     

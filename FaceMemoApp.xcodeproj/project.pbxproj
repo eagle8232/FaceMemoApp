@@ -261,6 +261,7 @@
 		A8BF68092C27B6F90005AE43 /* RotationModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BF68082C27B6F90005AE43 /* RotationModifier.swift */; };
 		A8BF680B2C28074C0005AE43 /* StorageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BF680A2C28074C0005AE43 /* StorageViewModel.swift */; };
 		A8BF68182C2FCDE80005AE43 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BF68172C2FCDE80005AE43 /* HomeViewModel.swift */; };
+		A8BF681A2C2FEAA70005AE43 /* UIImage + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BF68192C2FEAA70005AE43 /* UIImage + Extension.swift */; };
 		A8C283542C20BEEA00506A5B /* DeepAR in Frameworks */ = {isa = PBXBuildFile; productRef = A8C283532C20BEEA00506A5B /* DeepAR */; };
 		A8C283572C20BF4300506A5B /* DeepARSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C283562C20BF4300506A5B /* DeepARSwiftUIView.swift */; };
 		A8C2836B2C20CE7400506A5B /* ray-ban-wayfarer.deepar in Resources */ = {isa = PBXBuildFile; fileRef = A8C2835B2C20CE7300506A5B /* ray-ban-wayfarer.deepar */; };
@@ -539,6 +540,7 @@
 		A8BF68082C27B6F90005AE43 /* RotationModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationModifier.swift; sourceTree = "<group>"; };
 		A8BF680A2C28074C0005AE43 /* StorageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageViewModel.swift; sourceTree = "<group>"; };
 		A8BF68172C2FCDE80005AE43 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		A8BF68192C2FEAA70005AE43 /* UIImage + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage + Extension.swift"; sourceTree = "<group>"; };
 		A8C283562C20BF4300506A5B /* DeepARSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepARSwiftUIView.swift; sourceTree = "<group>"; };
 		A8C2835B2C20CE7300506A5B /* ray-ban-wayfarer.deepar */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ray-ban-wayfarer.deepar"; sourceTree = "<group>"; };
 		A8C2835C2C20CE7300506A5B /* Pixel_Hearts.deepar */ = {isa = PBXFileReference; lastKnownFileType = file; path = Pixel_Hearts.deepar; sourceTree = "<group>"; };
@@ -1235,6 +1237,7 @@
 			children = (
 				A8C2837F2C20D42500506A5B /* CIImage + Extension.swift */,
 				A8BF68042C27B0E50005AE43 /* View + Extension.swift */,
+				A8BF68192C2FEAA70005AE43 /* UIImage + Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1612,6 +1615,7 @@
 				A82DAF012C20889F00E18665 /* TabBarView.swift in Sources */,
 				A8610C4F2C222BE00042CACC /* ImagesListView.swift in Sources */,
 				A8C283802C20D42500506A5B /* CIImage + Extension.swift in Sources */,
+				A8BF681A2C2FEAA70005AE43 /* UIImage + Extension.swift in Sources */,
 				A82DAF072C208EEB00E18665 /* CustomBlurView.swift in Sources */,
 				A82DAEE02C2083F500E18665 /* FaceMemoApp.swift in Sources */,
 				A82DAF052C208AD100E18665 /* Constants.swift in Sources */,
@@ -1751,9 +1755,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FaceMemoApp/Preview Content\"";
-				DEVELOPMENT_TEAM = KHK9MG7Z64;
+				DEVELOPMENT_TEAM = 75V8MNX2FX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Face memo";
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need to have access to your camera to use filters.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We need to have access to your microphone to use filters properly.";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "We need access to your photo libraries to save captured photos.";
@@ -1768,8 +1773,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.khan.FaceMemo;
+				MARKETING_VERSION = 1.0.2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zaib.facememo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -1789,9 +1794,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FaceMemoApp/Preview Content\"";
-				DEVELOPMENT_TEAM = KHK9MG7Z64;
+				DEVELOPMENT_TEAM = 75V8MNX2FX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Face memo";
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need to have access to your camera to use filters.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We need to have access to your microphone to use filters properly.";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "We need access to your photo libraries to save captured photos.";
@@ -1806,8 +1812,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.khan.FaceMemo;
+				MARKETING_VERSION = 1.0.2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zaib.facememo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;

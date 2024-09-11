@@ -16,8 +16,8 @@ import SwiftUI
 class CustomizationViewModel: ObservableObject {
     
     @Published var stickers: [Sticker] = []
-    @Published var isPresentingStickers: Bool = false
     @Published var selectedStickers: [Sticker] = []
+    @Published var isPresentingStickers: Bool = false
     @Published private var defaultImage: UIImage? /// - Use this to set defaultImage to 'customizedImage' if needed
     
     let fileManager: FileManager = FileManager.default
@@ -27,9 +27,49 @@ class CustomizationViewModel: ObservableObject {
         fetchStickers()
     }
     
+    // MARK: - Public Functions
+    @MainActor
+    public func renderCustomizedImage(selectedImage: Binding<UIImage>) -> UIImage? {
+        let image = selectedImage.wrappedValue
+        
+        let renderer = UIGraphicsImageRenderer(size: image.size)
+        let combinedImage = renderer.image { context in
+            image.draw(in: CGRect(origin: .zero, size: image.size))
+            
+            for sticker in selectedStickers {
+                print(sticker.scale)
+                print("------ DEBUG: sticker.position ------ \n\(sticker.position)")
+                print("------ DEBUG: sticker.scale ------ \n\(sticker.scale)")
+                print("------ DEBUG: sticker.width ------ \n\(sticker.image.size.width)")
+                print("------ DEBUG: sticker.scale * width ------ \n\(sticker.image.size.width * sticker.scale * 3)")
+                let resizedPosition = CGPoint(x: sticker.position.x * 2, y: sticker.position.y * 2.8)
+                print(resizedPosition)
+                let stickerSize = CGSize(width: sticker.image.size.width * sticker.scale * 3, height: sticker.image.size.height * sticker.scale * 3)
+                
+                let stickerRect = CGRect(origin: resizedPosition, size: stickerSize)
+                
+//                if let newStickerImage = resizeImage(image: sticker.image, targetSize: stickerSize) {
+                sticker.image.draw(in: stickerRect)
+//                }
+            }
+        }
+        
+        return combinedImage
+    }
+    
+    private func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage? {
+        let renderer = UIGraphicsImageRenderer(size: targetSize)
+        let newImage = renderer.image { context in
+            image.draw(in: CGRect(origin: .zero, size: targetSize))
+        }
+        return newImage
+    }
+    
+    // MARK: - Private Functions
+    
     private func fetchStickers() {
         do {
-            let items = try fileManager.contentsOfDirectory(atPath: path).map {$0.replacingOccurrences(of: ".svg", with: "")}
+            let items = try fileManager.contentsOfDirectory(atPath: path).map { $0.replacingOccurrences(of: ".svg", with: "") }
             
             for item in items {
                 if let url = Bundle.main.url(forResource: item, withExtension: "svg") {
@@ -41,7 +81,7 @@ class CustomizationViewModel: ObservableObject {
                         svgImage.size = CGSize(width: Constants.stickerSize, height: Constants.stickerSize)
                         let sticker = Sticker(name: item, image: svgImage.uiImage)
                         
-                        DispatchQueue.main.async { [ weak self ] in
+                        DispatchQueue.main.async { [weak self] in
                             self?.stickers.append(sticker)
                         }
                     } else {

@@ -106,6 +106,10 @@ struct RecentlyView: View {
                         self.player?.pause()
                         self.player = nil
                     }
+                
+                RoundedRectangle(cornerRadius: 10)
+                    .fill(.white.opacity(0.1))
+                    .frame(height: 200)
                     .onTapGesture {
                         if let urlString = splashUrlString, let url = URL(string: urlString) {
                             UIApplication.shared.open(url)
@@ -113,6 +117,7 @@ struct RecentlyView: View {
                     }
             }
         }
+        .padding(.horizontal)
         .onAppear {
             Task {
                 await marketingRepository.getVideoAds { data in

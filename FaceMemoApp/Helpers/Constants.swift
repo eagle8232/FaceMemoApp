@@ -24,12 +24,17 @@ class Constants {
     
     // DeepAR License Key
     /// - Use license key to use DeepAR's filters
-    static let deepARLicenseKey: String = "7e7cc541b882d34c55773cfafbbfe884a66700f50ad34b5830342f72575b2b868cad631eb0d84044"
+    static let deepARLicenseKey: String = "7d247769fbca297905489d214fa8d2460654598df54bacaaf92ca44528667f8988ac4f63e8746551"
     
-    // MARK: - All CGFloaf Values
+    // MARK: - All CG Values
     
     static let cornerRadius: CGFloat = 15
     static let iconSize: CGFloat = 35
-    static let bottomPaddingSize: CGFloat = 32
+    static let bottomPaddingSize: CGFloat = 20
     static let stickerSize: CGFloat = 70
+    // Defaults
+    static let defaultLocation: CGPoint = CGPoint(x: 300, y: 600)
+    static let defaultAngle: Angle = Angle(degrees: 0)
+    static let defaultScale: CGFloat = 1.0
+    static let defaultSize: CGSize = CGSize(width: 200, height: 200)
 }

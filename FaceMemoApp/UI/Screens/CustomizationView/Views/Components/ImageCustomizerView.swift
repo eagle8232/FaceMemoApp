@@ -7,14 +7,18 @@
 
 import SwiftUI
 
+struct CustomizedValues: Equatable {
+    var location: CGPoint = Constants.defaultLocation
+    var angle: Angle = Constants.defaultAngle
+    var scaleSize: CGFloat = Constants.defaultScale
+}
+
 struct ImageCustomizerView: View {
     @Binding var selectedImage: UIImage
-    var selectedStickers: [Sticker]
+    @Binding var selectedStickers: [Sticker]
     
     /// - Drag, rotate and scale properties
-    @State var location: CGPoint = CGPoint(x: 190, y: 600)
-    @State var angle: Angle = Angle(degrees: 0)
-    @State var scaleSize: CGFloat = 1
+    @State var customizedValues: CustomizedValues = CustomizedValues()
     
     var body: some View {
         contentView
@@ -29,38 +33,30 @@ struct ImageCustomizerView: View {
                 .resizable()
             
             
-            ForEach(selectedStickers) { sticker in
-                Image(uiImage: sticker.image)
+            ForEach(0..<selectedStickers.count, id: \.self) { id in
+                Image(uiImage: selectedStickers[id].image)
+                    .overlay(
+                        GeometryReader { geometry in
+                            Color.clear  // We need a view to attach the GeometryReader
+                                .onAppear {
+                                    let imageSize = geometry.size
+                                    print("------ DEBUG: imageSize ------ \n\(imageSize)")
+                                    // You can store the imageSize in your model if needed
+                                    selectedStickers[id].imageSize = imageSize
+                                }
+                        }
+                    )
                     .draggableView { location in
-                        self.location = location
+                        selectedStickers[id].position = location
+                        print("------ DEBUG: location ------ \n\(location)")
                     }
                     .pinchView { scaleSize in
-                        self.scaleSize = scaleSize
+                        selectedStickers[id].scale = scaleSize
+                        print("------ DEBUG: scaleSize ------ \n\(scaleSize)")
                     }
-                    .onAppear {
-                        imageByCombiningImage(firstImage: selectedImage, withImage: sticker.image, at: location, scale: scaleSize, angle: angle)
-                    }
-                    .onChange(of: location) { newValue in
-                        imageByCombiningImage(firstImage: selectedImage, withImage: sticker.image, at: location, scale: scaleSize, angle: angle)
-                    }
-                    .onChange(of: scaleSize) { newValue in
-                        imageByCombiningImage(firstImage: selectedImage, withImage: sticker.image, at: location, scale: scaleSize, angle: angle)
-                    }
+
             }
         }
         
     }
-    
-    func imageByCombiningImage(firstImage: UIImage, withImage secondImage: UIImage, at location: CGPoint, scale: CGFloat, angle: Angle) {
-        let renderer = UIGraphicsImageRenderer(size: firstImage.size)
-        let area = CGRect(x: 0, y: 0, width: firstImage.size.width, height: firstImage.size.height)
-        
-        let image = renderer.image { context in
-            firstImage.draw(in: area)
-            secondImage.draw(in: area, blendMode: .normal, alpha: 1)
-        }
-        
-        selectedImage = image
-    }
 }
-

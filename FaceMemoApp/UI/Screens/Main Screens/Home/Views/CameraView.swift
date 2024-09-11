@@ -19,7 +19,6 @@ struct CameraView: View {
             VStack {
                 VStack {
                     effectsView
-                    bannerView
                 }
                 Spacer()
                 captureButton
@@ -47,34 +46,5 @@ struct CameraView: View {
         .padding(.bottom, Constants.bottomPaddingSize + 80) /// - Adding 16 more, as we already added padding to tab bar
     }
     
-    // MARK: - Marketing Banner Ads View
-    var marketingRepository: MarketingRepository = MarketingRepository()
-    
-    @State var marketingImageString: String?
-    @State var marketingUrlString: String?
-    
-    var bannerView: some View {
-        ZStack {
-            if marketingImageString != nil, let url = URL(string: marketingImageString ?? "") {
-                WebImage(url: url)
-                    .resizable()
-                    .frame(height: 200)
-                    .cornerRadius(10)
-                    .padding()
-                    .onTapGesture {
-                        if let urlString = marketingUrlString, let url = URL(string: urlString) {
-                            UIApplication.shared.open(url)
-                        }
-                    }
-            }
-        }
-        .onAppear {
-            Task {
-                await marketingRepository.getBannerAds { data in
-                    marketingImageString = data?.fileLink
-                    marketingUrlString = data?.url
-                }
-            }
-        }
-    }
+   
 }
